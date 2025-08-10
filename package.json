@@ -5,30 +5,45 @@
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsup",
     "test": "vitest",
     "prepare": "npm run build"
   },
-  "keywords": ["react", "component", "blobble", "ui"],
+  "keywords": [
+    "react",
+    "component",
+    "blobble",
+    "ui"
+  ],
   "author": "",
   "license": "ISC",
   "type": "module",
   "peerDependencies": {
     "react": ">=17",
-    "react-dom": ">=17"
+    "react-dom": ">=17",
+    "three": ">=0.150.0",
+    "@react-three/fiber": ">=8.0.0",
+    "@react-three/drei": ">=9.0.0"
   },
   "devDependencies": {
-    "typescript": "^5.0.0",
-    "tsup": "^8.0.0",
-    "vitest": "^1.0.0",
-    "@testing-library/react": "^14.0.0",
     "@testing-library/jest-dom": "^6.0.0",
-    "jsdom": "^23.0.0",
+    "@testing-library/react": "^14.0.0",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
+    "jsdom": "^23.0.0",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.0.0",
+    "vitest": "^1.0.0"
+  },
+  "dependencies": {
+    "@react-three/drei": "^10.6.1",
+    "@react-three/fiber": "^9.3.0",
+    "three": "^0.179.1"
   }
 }
