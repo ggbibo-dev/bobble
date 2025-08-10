@@ -69,18 +69,7 @@ yalc add @ggbibo/blobble
 npm install
 ```
 
-### Using npm pack
 
-1. In the blobble package directory:
-```bash
-npm run build
-npm pack
-```
-
-2. In your test project:
-```bash
-npm install /path/to/ggbibo-blobble-0.0.0.tgz
-```
 
 ## Development
 
@@ -89,3 +78,24 @@ npm install
 npm run build
 npm test
 ```
+
+## Troubleshooting
+
+### "ReactSharedInternals is undefined" Error
+
+This error occurs when there are multiple React instances in your application. To fix this:
+
+1. **Ensure peer dependencies are installed**: Make sure you have the required peer dependencies installed in your project:
+   ```bash
+   npm install three @react-three/fiber @react-three/drei
+   ```
+
+2. **Check for duplicate React installations**: Run `npm ls react` to check for multiple React versions
+
+3. **Use npm dedupe**: Run `npm dedupe` to remove duplicate packages
+
+4. **Clear node_modules**: If the issue persists, try removing node_modules and reinstalling:
+   ```bash
+   rm -rf node_modules package-lock.json
+   npm install
+   ```

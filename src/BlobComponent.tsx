@@ -284,8 +284,8 @@ const BlobMesh: React.FC<{ audioUrl: string }> = ({ audioUrl }) => {
 
 export const BlobComponent: React.FC<BlobComponentProps> = ({ 
   audioUrl = "test.mp3",
-  width = 400,
-  height = 400,
+  width = 600,
+  height = 600,
   className = ""
 }) => {
   return (
