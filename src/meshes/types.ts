@@ -1,0 +1,14 @@
+import { Mesh, ShaderMaterial } from 'three'
+
+export interface BlobMeshProps {
+  audioUrl: string
+}
+
+export interface AudioState {
+  isPlaying: boolean
+  frequency: number
+}
+
+export interface BlobMeshRef extends Mesh {
+  material: ShaderMaterial
+}
