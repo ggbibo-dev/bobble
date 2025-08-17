@@ -100,7 +100,7 @@ const particleFragmentShader = `
     float particleDensity = particles(vUv, uTime, uFreq, fresnel);
     
     // Particle color and alpha - separate from rim
-    vec3 particleColor = vec3(0.1, 0.02, 0.1); // Dark navy for particles
+    vec3 particleColor = vec3(0.1, 0.4, 0.5); // Darker aqua with gray/navy tones
     float alpha = particleDensity * 1.0; // Separate alpha for particles
     
     gl_FragColor = vec4(particleColor, alpha);
