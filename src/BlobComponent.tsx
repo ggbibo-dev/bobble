@@ -17,13 +17,17 @@ export interface BlobComponentProps {
   width?: number
   height?: number
   className?: string
+  enableZoom?: boolean
+  enablePan?: boolean
 }
 
 function BlobComponent({ 
   audioUrl = "test.mp3",
   width,
   height,
-  className
+  className,
+  enableZoom = true,
+  enablePan = false
 }: BlobComponentProps) {
   const containerStyle = {
     width: width || '100%',
@@ -32,7 +36,7 @@ function BlobComponent({
 
   return (
     <div style={containerStyle} className={className}>
-      <ShaderScene audioUrl={audioUrl} />
+      <ShaderScene audioUrl={audioUrl} enableZoom={enableZoom} enablePan={enablePan} />
     </div>
   )
 }
