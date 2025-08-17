@@ -45,31 +45,44 @@ const haloFragmentShader = `
     return mix(mix(a, b, f.x), mix(c, d, f.x), f.y);
   }
 
-  // Function to create moving particles that respond to audio
-  float particles(vec2 uv, float time, float freq) {
+  // Function to create moving particles that respond to audio and fresnel
+  float particles(vec2 uv, float time, float freq, float fresnel) {
     float particleField = 0.0;
     
     // Create multiple layers of particles with different sizes
     for (int i = 0; i < 5; i++) {
       float layer = float(i);
       float speed = 0.3 + layer * 0.5;
-      float scale = 120.0 + layer * 30.0; // Increased scale for more particles
+      float scale = 200.0 + layer * 50.0; // Increased scale for more particles
       
-      // Make particles move based on frequency - much more subtle movement
+      // Basic time-based flow - always active, larger movement
+      vec2 timeFlow = vec2(
+        sin(time * 0.2 + layer * 0.7) * 0.08,
+        cos(time * 0.15 + layer * 1.2) * 0.08
+      );
+      
+      // Audio-responsive movement
       vec2 audioOffset = vec2(
         sin(time * speed + layer * 1.5) * 0.05 * freq,
         cos(time * speed * 0.7 + layer * 2.1) * 0.05 * freq
       );
       
-      float noiseVal = noise(uv * scale);
-      float threshold = 0.97 + layer * 0.005; // Threshold for particles
+      // Apply audio offset to UV coordinates for particle movement
+      vec2 animatedUV = uv + audioOffset + timeFlow;
+      float noiseVal = noise(animatedUV * scale);
+      
+      // Adjust threshold based on fresnel - lower threshold in fresnel regions
+      float baseThreshold = 0.92 + layer * 0.008; // Lowered base threshold for more particles
+      float fresnelInfluence = fresnel * 0.15; // Increased fresnel influence
+      float threshold = baseThreshold - fresnelInfluence;
+      
       float particle = step(threshold, noiseVal);
       
       // Make particles respond to frequency (no time-based pulsing)
       float freqResponse = 1.0 + 0.3 * freq;
       particle *= freqResponse;
       
-      // Particle size
+      // Particle size - always tiny
       float particleSize = 0.2;
       particleField += particle * particleSize;
     }
@@ -84,10 +97,12 @@ const haloFragmentShader = `
     // Calculate fresnel effect using dot product
     float fresnel = dot(vNormal, viewDirection);
     fresnel = 1.0 - fresnel; // Invert to get higher values at the rim
-    fresnel = pow(fresnel, 3.0); // Apply power for control over falloff and sharpness
+
+    float control = 3.5; // Control the sharpness of the rim (lower less sharp)
+    fresnel = pow(fresnel, control); // Apply power for control over falloff and sharpness
     
     // Create particles that respond to audio
-    float particleDensity = particles(vUv, uTime, uFreq);
+    float particleDensity = particles(vUv, uTime, uFreq, fresnel);
     
     // Basic lighting for depth
     vec3 lightDirection = normalize(vec3(1.0, 1.0, 1.0));
@@ -96,7 +111,7 @@ const haloFragmentShader = `
     // Colors
     vec3 baseColor = vec3(0.01, 0.02, 0.1); // Very dark navy
     vec3 rimColor = vec3(0.2, 0.4, 1.0); // Bright blue for halo
-    vec3 particleColor = vec3(0.1, 0.02, 0.1); // Very dark navy
+    vec3 particleColor = vec3(0.8, 0.9, 1.0); // Bright blue-white for particles
     
     // Start with base lighting
     vec3 finalColor = baseColor * (0.2 + 0.3 * diffuse);
@@ -104,14 +119,14 @@ const haloFragmentShader = `
     // Add the fresnel rim effect
     finalColor = mix(finalColor, rimColor, fresnel * 0.8);
     
-    // Add particles on top
+    // Add particles on top with higher opacity
     if (particleDensity > 0.0) {
-      finalColor = mix(finalColor, particleColor, particleDensity * 0.6);
+      finalColor = mix(finalColor, particleColor, particleDensity * 0.9);
     }
     
-    // Alpha - combine fresnel and particles
+    // Alpha - combine fresnel and particles with higher particle contribution
     float alpha = fresnel * 0.9;
-    alpha = max(alpha, particleDensity * 0.4);
+    alpha = max(alpha, particleDensity * 0.8); // Increased particle alpha contribution
     
     gl_FragColor = vec4(finalColor, alpha);
   }
@@ -128,3 +143,4 @@ export const haloBlobShaderConfig: ShaderConfig = {
     transparent: true
   }
 }
+
