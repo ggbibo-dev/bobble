@@ -1,9 +1,9 @@
-import Fe, { useRef as Q, useState as gr, useEffect as hr } from "react";
+import Oe, { useRef as Q, useState as gr, useEffect as hr } from "react";
 import { useFrame as yr, Canvas as xr, extend as br } from "@react-three/fiber";
 import * as je from "three";
-import { IcosahedronGeometry as Pr } from "three";
-import { PositionalAudio as _r, OrbitControls as Er, shaderMaterial as Oe } from "@react-three/drei";
-var te = { exports: {} }, N = {};
+import { IcosahedronGeometry as _r } from "three";
+import { PositionalAudio as Pr, OrbitControls as Er, shaderMaterial as ke } from "@react-three/drei";
+var te = { exports: {} }, I = {};
 /**
  * @license React
  * react-jsx-runtime.production.min.js
@@ -13,25 +13,25 @@ var te = { exports: {} }, N = {};
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-var Se;
-function wr() {
-  if (Se)
-    return N;
-  Se = 1;
-  var w = Fe, x = Symbol.for("react.element"), d = Symbol.for("react.fragment"), p = Object.prototype.hasOwnProperty, R = w.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner, T = { key: !0, ref: !0, __self: !0, __source: !0 };
-  function b(P, c, C) {
-    var f, _ = {}, S = null, I = null;
-    C !== void 0 && (S = "" + C), c.key !== void 0 && (S = "" + c.key), c.ref !== void 0 && (I = c.ref);
+var Te;
+function Rr() {
+  if (Te)
+    return I;
+  Te = 1;
+  var R = Oe, x = Symbol.for("react.element"), d = Symbol.for("react.fragment"), p = Object.prototype.hasOwnProperty, C = R.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner, S = { key: !0, ref: !0, __self: !0, __source: !0 };
+  function b(_, c, w) {
+    var f, P = {}, T = null, q = null;
+    w !== void 0 && (T = "" + w), c.key !== void 0 && (T = "" + c.key), c.ref !== void 0 && (q = c.ref);
     for (f in c)
-      p.call(c, f) && !T.hasOwnProperty(f) && (_[f] = c[f]);
-    if (P && P.defaultProps)
-      for (f in c = P.defaultProps, c)
-        _[f] === void 0 && (_[f] = c[f]);
-    return { $$typeof: x, type: P, key: S, ref: I, props: _, _owner: R.current };
+      p.call(c, f) && !S.hasOwnProperty(f) && (P[f] = c[f]);
+    if (_ && _.defaultProps)
+      for (f in c = _.defaultProps, c)
+        P[f] === void 0 && (P[f] = c[f]);
+    return { $$typeof: x, type: _, key: T, ref: q, props: P, _owner: C.current };
   }
-  return N.Fragment = d, N.jsx = b, N.jsxs = b, N;
+  return I.Fragment = d, I.jsx = b, I.jsxs = b, I;
 }
-var q = {};
+var N = {};
 /**
  * @license React
  * react-jsx-runtime.development.js
@@ -42,24 +42,24 @@ var q = {};
  * LICENSE file in the root directory of this source tree.
  */
 var ze;
-function Rr() {
+function Cr() {
   return ze || (ze = 1, process.env.NODE_ENV !== "production" && function() {
-    var w = Fe, x = Symbol.for("react.element"), d = Symbol.for("react.portal"), p = Symbol.for("react.fragment"), R = Symbol.for("react.strict_mode"), T = Symbol.for("react.profiler"), b = Symbol.for("react.provider"), P = Symbol.for("react.context"), c = Symbol.for("react.forward_ref"), C = Symbol.for("react.suspense"), f = Symbol.for("react.suspense_list"), _ = Symbol.for("react.memo"), S = Symbol.for("react.lazy"), I = Symbol.for("react.offscreen"), ae = Symbol.iterator, ke = "@@iterator";
+    var R = Oe, x = Symbol.for("react.element"), d = Symbol.for("react.portal"), p = Symbol.for("react.fragment"), C = Symbol.for("react.strict_mode"), S = Symbol.for("react.profiler"), b = Symbol.for("react.provider"), _ = Symbol.for("react.context"), c = Symbol.for("react.forward_ref"), w = Symbol.for("react.suspense"), f = Symbol.for("react.suspense_list"), P = Symbol.for("react.memo"), T = Symbol.for("react.lazy"), q = Symbol.for("react.offscreen"), ae = Symbol.iterator, Fe = "@@iterator";
     function De(e) {
       if (e === null || typeof e != "object")
         return null;
-      var r = ae && e[ae] || e[ke];
+      var r = ae && e[ae] || e[Fe];
       return typeof r == "function" ? r : null;
     }
-    var j = w.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+    var j = R.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
     function v(e) {
       {
         for (var r = arguments.length, t = new Array(r > 1 ? r - 1 : 0), a = 1; a < r; a++)
           t[a - 1] = arguments[a];
-        Ae("error", e, t);
+        Me("error", e, t);
       }
     }
-    function Ae(e, r, t) {
+    function Me(e, r, t) {
       {
         var a = j.ReactDebugCurrentFrame, i = a.getStackAddendum();
         i !== "" && (r += "%s", t = t.concat([i]));
@@ -69,10 +69,10 @@ function Rr() {
         l.unshift("Warning: " + r), Function.prototype.apply.call(console[e], console, l);
       }
     }
-    var Me = !1, Ne = !1, qe = !1, Ie = !1, We = !1, oe;
+    var Ae = !1, Ie = !1, Ne = !1, qe = !1, We = !1, oe;
     oe = Symbol.for("react.module.reference");
     function Ue(e) {
-      return !!(typeof e == "string" || typeof e == "function" || e === p || e === T || We || e === R || e === C || e === f || Ie || e === I || Me || Ne || qe || typeof e == "object" && e !== null && (e.$$typeof === S || e.$$typeof === _ || e.$$typeof === b || e.$$typeof === P || e.$$typeof === c || // This needs to include all possible module reference object
+      return !!(typeof e == "string" || typeof e == "function" || e === p || e === S || We || e === C || e === w || e === f || qe || e === q || Ae || Ie || Ne || typeof e == "object" && e !== null && (e.$$typeof === T || e.$$typeof === P || e.$$typeof === b || e.$$typeof === _ || e.$$typeof === c || // This needs to include all possible module reference object
       // types supported by any Flight configuration anywhere since
       // we don't know which Flight build this will end up being used
       // with.
@@ -100,18 +100,18 @@ function Rr() {
           return "Fragment";
         case d:
           return "Portal";
-        case T:
+        case S:
           return "Profiler";
-        case R:
-          return "StrictMode";
         case C:
+          return "StrictMode";
+        case w:
           return "Suspense";
         case f:
           return "SuspenseList";
       }
       if (typeof e == "object")
         switch (e.$$typeof) {
-          case P:
+          case _:
             var r = e;
             return ne(r) + ".Consumer";
           case b:
@@ -119,10 +119,10 @@ function Rr() {
             return ne(t._context) + ".Provider";
           case c:
             return Ye(e, e.render, "ForwardRef");
-          case _:
+          case P:
             var a = e.displayName || null;
             return a !== null ? a : E(e.type) || "Memo";
-          case S: {
+          case T: {
             var i = e, l = i._payload, n = i._init;
             try {
               return E(n(l));
@@ -282,13 +282,13 @@ function Rr() {
       } finally {
         B = !1, V.current = l, Ve(), Error.prepareStackTrace = i;
       }
-      var k = e ? e.displayName || e.name : "", F = k ? W(k) : "";
-      return typeof e == "function" && U.set(e, F), F;
+      var F = e ? e.displayName || e.name : "", O = F ? W(F) : "";
+      return typeof e == "function" && U.set(e, O), O;
     }
     function Be(e, r, t) {
       return me(e, !1);
     }
-    function Ge(e) {
+    function Je(e) {
       var r = e.prototype;
       return !!(r && r.isReactComponent);
     }
@@ -296,11 +296,11 @@ function Rr() {
       if (e == null)
         return "";
       if (typeof e == "function")
-        return me(e, Ge(e));
+        return me(e, Je(e));
       if (typeof e == "string")
         return W(e);
       switch (e) {
-        case C:
+        case w:
           return W("Suspense");
         case f:
           return W("SuspenseList");
@@ -309,9 +309,9 @@ function Rr() {
         switch (e.$$typeof) {
           case c:
             return Be(e.render);
-          case _:
+          case P:
             return Y(e.type, r, t);
-          case S: {
+          case T: {
             var a = e, i = a._payload, l = a._init;
             try {
               return Y(l(i), r, t);
@@ -321,7 +321,7 @@ function Rr() {
         }
       return "";
     }
-    var A = Object.prototype.hasOwnProperty, pe = {}, ge = j.ReactDebugCurrentFrame;
+    var M = Object.prototype.hasOwnProperty, pe = {}, ge = j.ReactDebugCurrentFrame;
     function $(e) {
       if (e) {
         var r = e._owner, t = Y(e.type, e._source, r ? r.type : null);
@@ -329,9 +329,9 @@ function Rr() {
       } else
         ge.setExtraStackFrame(null);
     }
-    function Je(e, r, t, a, i) {
+    function Ge(e, r, t, a, i) {
       {
-        var l = Function.call.bind(A);
+        var l = Function.call.bind(M);
         for (var n in e)
           if (l(e, n)) {
             var o = void 0;
@@ -349,7 +349,7 @@ function Rr() {
       }
     }
     var Ke = Array.isArray;
-    function G(e) {
+    function J(e) {
       return Ke(e);
     }
     function Xe(e) {
@@ -372,15 +372,15 @@ function Rr() {
       if (He(e))
         return v("The provided key is an unsupported type %s. This value must be coerced to a string before before using it here.", Xe(e)), he(e);
     }
-    var M = j.ReactCurrentOwner, Ze = {
+    var A = j.ReactCurrentOwner, Ze = {
       key: !0,
       ref: !0,
       __self: !0,
       __source: !0
-    }, xe, be, J;
-    J = {};
+    }, xe, be, G;
+    G = {};
     function Qe(e) {
-      if (A.call(e, "ref")) {
+      if (M.call(e, "ref")) {
         var r = Object.getOwnPropertyDescriptor(e, "ref").get;
         if (r && r.isReactWarning)
           return !1;
@@ -388,7 +388,7 @@ function Rr() {
       return e.ref !== void 0;
     }
     function er(e) {
-      if (A.call(e, "key")) {
+      if (M.call(e, "key")) {
         var r = Object.getOwnPropertyDescriptor(e, "key").get;
         if (r && r.isReactWarning)
           return !1;
@@ -396,9 +396,9 @@ function Rr() {
       return e.key !== void 0;
     }
     function rr(e, r) {
-      if (typeof e.ref == "string" && M.current && r && M.current.stateNode !== r) {
-        var t = E(M.current.type);
-        J[t] || (v('Component "%s" contains the string ref "%s". Support for string refs will be removed in a future major release. This case cannot be automatically converted to an arrow function. We ask you to manually fix this case by using useRef() or createRef() instead. Learn more about using refs safely here: https://reactjs.org/link/strict-mode-string-ref', E(M.current.type), e.ref), J[t] = !0);
+      if (typeof e.ref == "string" && A.current && r && A.current.stateNode !== r) {
+        var t = E(A.current.type);
+        G[t] || (v('Component "%s" contains the string ref "%s". Support for string refs will be removed in a future major release. This case cannot be automatically converted to an arrow function. We ask you to manually fix this case by using useRef() or createRef() instead. Learn more about using refs safely here: https://reactjs.org/link/strict-mode-string-ref', E(A.current.type), e.ref), G[t] = !0);
       }
     }
     function tr(e, r) {
@@ -457,7 +457,7 @@ function Rr() {
         var l, n = {}, o = null, m = null;
         t !== void 0 && (ye(t), o = "" + t), er(r) && (ye(r.key), o = "" + r.key), Qe(r) && (m = r.ref, rr(r, i));
         for (l in r)
-          A.call(r, l) && !Ze.hasOwnProperty(l) && (n[l] = r[l]);
+          M.call(r, l) && !Ze.hasOwnProperty(l) && (n[l] = r[l]);
         if (e && e.defaultProps) {
           var s = e.defaultProps;
           for (l in s)
@@ -467,23 +467,23 @@ function Rr() {
           var u = typeof e == "function" ? e.displayName || e.name || "Unknown" : e;
           o && tr(n, u), m && ar(n, u);
         }
-        return or(e, o, m, i, a, M.current, n);
+        return or(e, o, m, i, a, A.current, n);
       }
     }
-    var K = j.ReactCurrentOwner, Pe = j.ReactDebugCurrentFrame;
-    function O(e) {
+    var K = j.ReactCurrentOwner, _e = j.ReactDebugCurrentFrame;
+    function k(e) {
       if (e) {
         var r = e._owner, t = Y(e.type, e._source, r ? r.type : null);
-        Pe.setExtraStackFrame(t);
+        _e.setExtraStackFrame(t);
       } else
-        Pe.setExtraStackFrame(null);
+        _e.setExtraStackFrame(null);
     }
     var X;
     X = !1;
     function H(e) {
       return typeof e == "object" && e !== null && e.$$typeof === x;
     }
-    function _e() {
+    function Pe() {
       {
         if (K.current) {
           var e = E(K.current.type);
@@ -509,7 +509,7 @@ Check your code at ` + r + ":" + t + ".";
     var Ee = {};
     function lr(e) {
       {
-        var r = _e();
+        var r = Pe();
         if (!r) {
           var t = typeof e == "string" ? e : e.displayName || e.name;
           t && (r = `
@@ -519,7 +519,7 @@ Check the top-level render call using <` + t + ">.");
         return r;
       }
     }
-    function we(e, r) {
+    function Re(e, r) {
       {
         if (!e._store || e._store.validated || e.key != null)
           return;
@@ -529,17 +529,17 @@ Check the top-level render call using <` + t + ">.");
           return;
         Ee[t] = !0;
         var a = "";
-        e && e._owner && e._owner !== K.current && (a = " It was passed a child from " + E(e._owner.type) + "."), O(e), v('Each child in a list should have a unique "key" prop.%s%s See https://reactjs.org/link/warning-keys for more information.', t, a), O(null);
+        e && e._owner && e._owner !== K.current && (a = " It was passed a child from " + E(e._owner.type) + "."), k(e), v('Each child in a list should have a unique "key" prop.%s%s See https://reactjs.org/link/warning-keys for more information.', t, a), k(null);
       }
     }
-    function Re(e, r) {
+    function Ce(e, r) {
       {
         if (typeof e != "object")
           return;
-        if (G(e))
+        if (J(e))
           for (var t = 0; t < e.length; t++) {
             var a = e[t];
-            H(a) && we(a, r);
+            H(a) && Re(a, r);
           }
         else if (H(e))
           e._store && (e._store.validated = !0);
@@ -547,7 +547,7 @@ Check the top-level render call using <` + t + ">.");
           var i = De(e);
           if (typeof i == "function" && i !== e.entries)
             for (var l = i.call(e), n; !(n = l.next()).done; )
-              H(n.value) && we(n.value, r);
+              H(n.value) && Re(n.value, r);
         }
       }
     }
@@ -561,13 +561,13 @@ Check the top-level render call using <` + t + ">.");
           t = r.propTypes;
         else if (typeof r == "object" && (r.$$typeof === c || // Note: Memo only checks outer props here.
         // Inner props are checked in the reconciler.
-        r.$$typeof === _))
+        r.$$typeof === P))
           t = r.propTypes;
         else
           return;
         if (t) {
           var a = E(r);
-          Je(t, e.props, "prop", a, e);
+          Ge(t, e.props, "prop", a, e);
         } else if (r.PropTypes !== void 0 && !X) {
           X = !0;
           var i = E(r);
@@ -581,24 +581,24 @@ Check the top-level render call using <` + t + ">.");
         for (var r = Object.keys(e.props), t = 0; t < r.length; t++) {
           var a = r[t];
           if (a !== "children" && a !== "key") {
-            O(e), v("Invalid prop `%s` supplied to `React.Fragment`. React.Fragment can only have `key` and `children` props.", a), O(null);
+            k(e), v("Invalid prop `%s` supplied to `React.Fragment`. React.Fragment can only have `key` and `children` props.", a), k(null);
             break;
           }
         }
-        e.ref !== null && (O(e), v("Invalid attribute `ref` supplied to `React.Fragment`."), O(null));
+        e.ref !== null && (k(e), v("Invalid attribute `ref` supplied to `React.Fragment`."), k(null));
       }
     }
-    var Ce = {};
-    function Te(e, r, t, a, i, l) {
+    var we = {};
+    function Se(e, r, t, a, i, l) {
       {
         var n = Ue(e);
         if (!n) {
           var o = "";
           (e === void 0 || typeof e == "object" && e !== null && Object.keys(e).length === 0) && (o += " You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.");
           var m = ir(i);
-          m ? o += m : o += _e();
+          m ? o += m : o += Pe();
           var s;
-          e === null ? s = "null" : G(e) ? s = "array" : e !== void 0 && e.$$typeof === x ? (s = "<" + (E(e.type) || "Unknown") + " />", o = " Did you accidentally export a JSX literal instead of a component?") : s = typeof e, v("React.jsx: type is invalid -- expected a string (for built-in components) or a class/function (for composite components) but got: %s.%s", s, o);
+          e === null ? s = "null" : J(e) ? s = "array" : e !== void 0 && e.$$typeof === x ? (s = "<" + (E(e.type) || "Unknown") + " />", o = " Did you accidentally export a JSX literal instead of a component?") : s = typeof e, v("React.jsx: type is invalid -- expected a string (for built-in components) or a class/function (for composite components) but got: %s.%s", s, o);
         }
         var u = nr(e, r, t, i, l);
         if (u == null)
@@ -607,74 +607,74 @@ Check the top-level render call using <` + t + ">.");
           var h = r.children;
           if (h !== void 0)
             if (a)
-              if (G(h)) {
-                for (var k = 0; k < h.length; k++)
-                  Re(h[k], e);
+              if (J(h)) {
+                for (var F = 0; F < h.length; F++)
+                  Ce(h[F], e);
                 Object.freeze && Object.freeze(h);
               } else
                 v("React.jsx: Static children should always be an array. You are likely explicitly calling React.jsxs or React.jsxDEV. Use the Babel transform instead.");
             else
-              Re(h, e);
+              Ce(h, e);
         }
-        if (A.call(r, "key")) {
-          var F = E(e), g = Object.keys(r).filter(function(pr) {
+        if (M.call(r, "key")) {
+          var O = E(e), g = Object.keys(r).filter(function(pr) {
             return pr !== "key";
           }), Z = g.length > 0 ? "{key: someKey, " + g.join(": ..., ") + ": ...}" : "{key: someKey}";
-          if (!Ce[F + Z]) {
+          if (!we[O + Z]) {
             var mr = g.length > 0 ? "{" + g.join(": ..., ") + ": ...}" : "{}";
             v(`A props object containing a "key" prop is being spread into JSX:
   let props = %s;
   <%s {...props} />
 React keys must be passed directly to JSX without using spread:
   let props = %s;
-  <%s key={someKey} {...props} />`, Z, F, mr, F), Ce[F + Z] = !0;
+  <%s key={someKey} {...props} />`, Z, O, mr, O), we[O + Z] = !0;
           }
         }
         return e === p ? ur(u) : sr(u), u;
       }
     }
     function cr(e, r, t) {
-      return Te(e, r, t, !0);
+      return Se(e, r, t, !0);
     }
     function fr(e, r, t) {
-      return Te(e, r, t, !1);
+      return Se(e, r, t, !1);
     }
     var vr = fr, dr = cr;
-    q.Fragment = p, q.jsx = vr, q.jsxs = dr;
-  }()), q;
+    N.Fragment = p, N.jsx = vr, N.jsxs = dr;
+  }()), N;
 }
-process.env.NODE_ENV === "production" ? te.exports = wr() : te.exports = Rr();
+process.env.NODE_ENV === "production" ? te.exports = Rr() : te.exports = Cr();
 var y = te.exports;
-function Cr({ audioUrl: w, shaderType: x = "default" }) {
-  const d = Q(null), p = Q(), [R, T] = gr(!0), b = Q(null);
+function wr({ audioUrl: R, shaderType: x = "default" }) {
+  const d = Q(null), p = Q(), [C, S] = gr(!0), b = Q(null);
   hr(() => {
     d.current && (p.current = new je.AudioAnalyser(d.current, 32));
   }, [d]), yr(({ clock: c }) => {
     var f;
     if (!((f = b.current) != null && f.material))
       return;
-    const C = b.current.material;
-    if (C.uniforms.uTime.value = c.getElapsedTime(), p.current) {
-      const _ = p.current.getAverageFrequency();
-      C.uniforms.uFreq.value = _ / 256;
+    const w = b.current.material;
+    if (w.uniforms.uTime.value = c.getElapsedTime(), p.current) {
+      const P = p.current.getAverageFrequency();
+      w.uniforms.uFreq.value = P / 256;
     }
   });
-  function P() {
-    d.current && (R ? d.current.pause() : d.current.play(), T(!R));
+  function _() {
+    d.current && (C ? d.current.pause() : d.current.play(), S(!C));
   }
   return /* @__PURE__ */ y.jsxs(
     "mesh",
     {
-      onClick: P,
+      onClick: _,
       castShadow: !0,
       ref: b,
       scale: [1, 1, 1],
       rotation: [Math.PI / 2, 0, 0],
       children: [
         /* @__PURE__ */ y.jsx(
-          _r,
+          Pr,
           {
-            url: w,
+            url: R,
             distance: 7,
             loop: !0,
             ref: d,
@@ -687,8 +687,8 @@ function Cr({ audioUrl: w, shaderType: x = "default" }) {
     }
   );
 }
-function Tr({
-  audioUrl: w,
+function Sr({
+  audioUrl: R,
   enableZoom: x = !0,
   enablePan: d = !1,
   shaderType: p = "default"
@@ -701,13 +701,13 @@ function Tr({
       children: [
         /* @__PURE__ */ y.jsx("ambientLight", { intensity: 0.5 }),
         /* @__PURE__ */ y.jsx("pointLight", { position: [10, 10, 10] }),
-        /* @__PURE__ */ y.jsx(Cr, { audioUrl: w, shaderType: p }),
+        /* @__PURE__ */ y.jsx(wr, { audioUrl: R, shaderType: p }),
         /* @__PURE__ */ y.jsx(Er, { enableZoom: x, enablePan: d })
       ]
     }
   );
 }
-const Sr = `
+const Tr = `
   uniform float uTime;
   uniform float uFreq;
   varying float vDisplacement;
@@ -900,7 +900,7 @@ const Sr = `
     gl_FragColor = vec4(dropletColor, finalAlpha);
   }
 `, ee = {
-  vertexShader: Sr,
+  vertexShader: Tr,
   fragmentShader: zr,
   uniforms: {
     uTime: { value: 0 },
@@ -908,7 +908,7 @@ const Sr = `
     uIntensity: { value: 1.5 },
     transparent: !0
   }
-}, Fr = `
+}, Or = `
   uniform float uTime;
   uniform float uFreq;
   varying vec2 vUv;
@@ -920,11 +920,7 @@ const Sr = `
     vPosition = position;
     vNormal = normalize(normalMatrix * normal);
     
-    // Add gentle pulsing animation based on frequency
-    float pulse = 1.0 + 0.1 * sin(uTime * 2.0) * uFreq;
-    vec3 newPosition = position * pulse;
-    
-    gl_Position = projectionMatrix * modelViewMatrix * vec4(newPosition, 1.0);
+    gl_Position = projectionMatrix * modelViewMatrix * vec4(position*uTime, 1.0);
   }
 `, jr = `
   uniform float uTime;
@@ -953,134 +949,131 @@ const Sr = `
     return mix(mix(a, b, f.x), mix(c, d, f.x), f.y);
   }
 
-  // Function to create moving particles
+  // Function to create moving particles that respond to audio
   float particles(vec2 uv, float time, float freq) {
     float particleField = 0.0;
     
-    // Create multiple layers of particles with different speeds
-    for (int i = 0; i < 3; i++) {
+    // Create multiple layers of particles with different speeds and sizes
+    for (int i = 0; i < 5; i++) {
       float layer = float(i);
-      float speed = 0.5 + layer * 0.3;
-      float scale = 20.0 + layer * 10.0;
+      float speed = 0.3 + layer * 0.5;
+      float scale = 120.0 + layer * 30.0; // Increased scale for more particles
       
-      vec2 movingUv = uv + vec2(
-        sin(time * speed + layer * 1.5) * 0.1,
-        cos(time * speed * 0.7 + layer * 2.1) * 0.1
+      // Make particles move based on frequency - much more subtle movement
+      vec2 audioOffset = vec2(
+        sin(time * speed + layer * 1.5) * 0.05 * freq,
+        cos(time * speed * 0.7 + layer * 2.1) * 0.05 * freq
       );
       
+      vec2 movingUv = uv + audioOffset;
+      
       float noiseVal = noise(movingUv * scale + time * speed);
-      float threshold = 0.85 + layer * 0.05;
+      float threshold = 0.95 + layer * 0.003; // Lower threshold for more particles
       float particle = step(threshold, noiseVal);
       
-      // Make particles pulse with frequency
-      float pulse = 1.0 + 0.3 * sin(time * 3.0 + layer) * freq;
+      // Make particles pulse with frequency - much more subtle
+      float pulse = 1.0 + 0.2 * sin(time * 0.5 + layer) * freq * 0.5;
       particle *= pulse;
       
-      particleField += particle * (0.8 - layer * 0.2);
+      // Same small size for all layers - tiny dots
+      float particleSize = 0.1;
+      particleField += particle * particleSize;
     }
     
     return particleField;
   }
 
   void main() {
-    // Calculate distance from center for halo effect
-    vec2 center = vec2(0.5, 0.5);
-    float dist = distance(vUv, center);
+    // Use a simpler rim calculation based on UV coordinates and normal
+    float rimFactor = 1.0 - dot(vNormal, vec3(0.0, 0.0, 1.0));
     
-    // Create halo gradient - brightest at edges, darker in center
-    float haloGradient = smoothstep(0.0, 0.3, dist) * smoothstep(1.0, 0.7, dist);
+    // Create smooth rim gradient
+    float rimWidth = 0.4;
+    float rimIntensity = smoothstep(0.0, rimWidth, rimFactor);
     
-    // Add some variation to the halo
-    float haloNoise = noise(vUv * 15.0 + uTime * 0.5) * 0.2;
-    haloGradient += haloNoise;
-    
-    // Create moving particles
+    // Create moving particles that respond to audio
     float particleDensity = particles(vUv, uTime, uFreq);
     
-    // Distribute particles more densely at the edges (halo effect)
-    float edgeFalloff = smoothstep(0.0, 0.4, dist) * smoothstep(1.0, 0.6, dist);
-    float centerFalloff = 1.0 - smoothstep(0.0, 0.3, dist);
+    // Dark navy colors
+    vec3 particleColor = vec3(0.01, 0.03, 0.25); // Dark navy for particles
+    vec3 rimColor = vec3(0.02, 0.05, 0.3); // Slightly lighter navy for rim
     
-    // Combine halo and particles with proper distribution
-    float finalParticles = particleDensity * (edgeFalloff * 2.0 + centerFalloff * 0.5);
+    // Create the final color - rim + particles
+    vec3 finalColor;
+    float alpha;
     
-    // Base blue color with electric blue glow
-    vec3 baseColor = vec3(0.1, 0.4, 1.0);
-    vec3 glowColor = vec3(0.3, 0.7, 1.2);
+    // Base color is transparent
+    finalColor = vec3(0.0);
+    alpha = 0.0;
     
-    // Combine halo gradient and particles
-    float intensity = haloGradient + finalParticles;
+    // Add rim effect
+    if (rimIntensity > 0.0) {
+      finalColor = mix(finalColor, rimColor, rimIntensity * 0.8);
+      alpha = max(alpha, rimIntensity * 0.6);
+    }
     
-    // Add frequency-based pulsing
-    float freqPulse = 1.0 + 0.5 * sin(uTime * 4.0) * uFreq;
-    intensity *= freqPulse;
-    
-    // Create the final color
-    vec3 finalColor = mix(baseColor, glowColor, intensity);
-    
-    // Add some variation based on normal for 3D effect
-    float normalVariation = dot(vNormal, vec3(0.0, 0.0, 1.0)) * 0.5 + 0.5;
-    finalColor *= (0.8 + normalVariation * 0.4);
-    
-    // Alpha based on intensity with some transparency
-    float alpha = clamp(intensity * 0.8 + 0.2, 0.0, 1.0);
+    // Add particles on top
+    if (particleDensity > 0.0) {
+      finalColor = mix(finalColor, particleColor, particleDensity * 0.7);
+      alpha = max(alpha, particleDensity * 0.5);
+    }
     
     gl_FragColor = vec4(finalColor, alpha);
   }
 `, re = {
-  vertexShader: Fr,
+  vertexShader: Or,
   fragmentShader: jr,
   uniforms: {
     uTime: { value: 0 },
     uFreq: { value: 0 },
-    uIntensity: { value: 1 },
+    uIntensity: { value: 6 },
     transparent: !0
   }
-}, Or = Oe(
+}, kr = ke(
   ee.uniforms,
   ee.vertexShader,
   ee.fragmentShader
-), kr = Oe(
+), Fr = ke(
   re.uniforms,
   re.vertexShader,
   re.fragmentShader
 );
 br({
-  BlobShaderMaterial: Or,
-  HaloBlobShaderMaterial: kr,
+  BlobShaderMaterial: kr,
+  HaloBlobShaderMaterial: Fr,
   Mesh: je.Mesh,
-  IcosahedronGeometry: Pr
+  IcosahedronGeometry: _r
 });
-function qr({
-  audioUrl: w = "test.mp3",
+function Nr({
+  audioUrl: R = "test.mp3",
   width: x,
   height: d,
   className: p,
-  enableZoom: R = !0,
-  enablePan: T = !1,
+  enableZoom: C = !0,
+  enablePan: S = !1,
   shaderType: b = "default"
 }) {
-  const P = {
+  const _ = {
     width: x || "100%",
     height: d || "400px"
   };
-  return /* @__PURE__ */ y.jsx("div", { style: P, className: p, children: /* @__PURE__ */ y.jsx(
-    Tr,
+  return /* @__PURE__ */ y.jsx("div", { style: _, className: p, children: /* @__PURE__ */ y.jsx(
+    Sr,
     {
-      audioUrl: w,
-      enableZoom: R,
-      enablePan: T,
+      audioUrl: R,
+      enableZoom: C,
+      enablePan: S,
       shaderType: b
     }
   ) });
 }
 export {
-  qr as BlobComponent,
-  qr as BlobComponentDefault,
-  Cr as BlobMesh,
-  Or as BlobShaderMaterial,
-  kr as HaloBlobShaderMaterial,
-  Tr as ShaderScene,
+  Nr as BlobComponent,
+  Nr as BlobComponentDefault,
+  wr as BlobMesh,
+  kr as BlobShaderMaterial,
+  Fr as HaloBlobShaderMaterial,
+  Sr as ShaderScene,
   ee as blobShaderConfig,
   re as haloBlobShaderConfig
 };

@@ -16,11 +16,16 @@ function BlobMesh({ audioUrl, shaderType = 'default' }: BlobMeshProps) {
     }
   }, [sound])
 
-  useFrame(({ clock }) => {
+  useFrame(({ clock, camera }) => {
     if (!meshRef.current?.material) return
 
     const material = meshRef.current.material as THREE.ShaderMaterial
     material.uniforms.uTime.value = clock.getElapsedTime()
+    
+    // Update camera position for rim effect
+    if (material.uniforms.ucameraPosition) {
+      material.uniforms.ucameraPosition.value = camera.position.toArray()
+    }
     
     if (analyzer.current) {
       const avgFreq = analyzer.current.getAverageFrequency()

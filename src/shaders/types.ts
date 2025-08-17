@@ -5,6 +5,7 @@ export interface BlobShaderUniforms {
   uTime: { value: number }
   uFreq: { value: number }
   uIntensity: { value: number }
+  ucameraPosition?: { value: [number, number, number] }
   transparent: boolean
 }
 
