@@ -36,7 +36,8 @@ vi.mock('./shaders', () => ({
       transparent: true
     }
   },
-  BlobShaderMaterial: vi.fn()
+  BlobShaderMaterial: vi.fn(),
+  HaloBlobShaderMaterial: vi.fn()
 }))
 
 describe('BlobComponent', () => {
@@ -62,5 +63,22 @@ describe('BlobComponent', () => {
     render(<BlobComponent audioUrl="custom-audio.mp3" />)
     const container = screen.getByTestId('canvas')
     expect(container).toBeInTheDocument()
+  })
+
+  it('renders with halo shader', () => {
+    render(<BlobComponent audioUrl="test.mp3" shaderType="halo" />)
+    expect(screen.getByTestId('canvas')).toBeInTheDocument()
+  })
+
+  it('renders with custom dimensions', () => {
+    render(<BlobComponent audioUrl="test.mp3" width={500} height={300} />)
+    const container = screen.getByTestId('canvas').parentElement
+    expect(container).toHaveStyle({ width: '500px', height: '300px' })
+  })
+
+  it('renders with custom className', () => {
+    render(<BlobComponent audioUrl="test.mp3" className="custom-class" />)
+    const container = screen.getByTestId('canvas').parentElement
+    expect(container).toHaveClass('custom-class')
   })
 })

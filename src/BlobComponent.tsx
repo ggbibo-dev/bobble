@@ -3,11 +3,12 @@ import { extend } from '@react-three/fiber'
 import { IcosahedronGeometry } from 'three'
 import * as THREE from 'three'
 import { ShaderScene } from './components/ShaderScene'
-import { BlobShaderMaterial } from './shaders'
+import { BlobShaderMaterial, HaloBlobShaderMaterial } from './shaders'
 
 // Register the custom shader material
 extend({
   BlobShaderMaterial,
+  HaloBlobShaderMaterial,
   Mesh: THREE.Mesh,
   IcosahedronGeometry: IcosahedronGeometry,
 })
@@ -19,6 +20,7 @@ export interface BlobComponentProps {
   className?: string
   enableZoom?: boolean
   enablePan?: boolean
+  shaderType?: 'default' | 'halo'
 }
 
 function BlobComponent({ 
@@ -27,7 +29,8 @@ function BlobComponent({
   height,
   className,
   enableZoom = true,
-  enablePan = false
+  enablePan = false,
+  shaderType = 'default'
 }: BlobComponentProps) {
   const containerStyle = {
     width: width || '100%',
@@ -36,7 +39,12 @@ function BlobComponent({
 
   return (
     <div style={containerStyle} className={className}>
-      <ShaderScene audioUrl={audioUrl} enableZoom={enableZoom} enablePan={enablePan} />
+      <ShaderScene 
+        audioUrl={audioUrl} 
+        enableZoom={enableZoom} 
+        enablePan={enablePan} 
+        shaderType={shaderType}
+      />
     </div>
   )
 }

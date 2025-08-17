@@ -4,7 +4,7 @@ import { PositionalAudio } from '@react-three/drei'
 import * as THREE from 'three'
 import { BlobMeshProps, BlobMeshRef } from './types'
 
-function BlobMesh({ audioUrl }: BlobMeshProps) {
+function BlobMesh({ audioUrl, shaderType = 'default' }: BlobMeshProps) {
   const sound = useRef<any>(null)
   const analyzer = useRef<THREE.AudioAnalyser>()
   const [isPlaying, setIsPlaying] = useState(true)
@@ -55,7 +55,11 @@ function BlobMesh({ audioUrl }: BlobMeshProps) {
         autoplay={true} 
       />
       <icosahedronGeometry args={[4, 100]} />
-      <blobShaderMaterial transparent={true} />
+      {shaderType === 'halo' ? (
+        <haloBlobShaderMaterial transparent={true} />
+      ) : (
+        <blobShaderMaterial transparent={true} />
+      )}
     </mesh>
   )
 }

@@ -7,12 +7,14 @@ interface ShaderSceneProps {
   audioUrl: string
   enableZoom?: boolean
   enablePan?: boolean
+  shaderType?: 'default' | 'halo'
 }
 
 function ShaderScene({ 
   audioUrl,
   enableZoom = true,
-  enablePan = false
+  enablePan = false,
+  shaderType = 'default'
 }: ShaderSceneProps) {
   return (
     <Canvas
@@ -21,7 +23,7 @@ function ShaderScene({
     >
       <ambientLight intensity={0.5} />
       <pointLight position={[10, 10, 10]} />
-      <BlobMesh audioUrl={audioUrl} />
+      <BlobMesh audioUrl={audioUrl} shaderType={shaderType} />
       <OrbitControls enableZoom={enableZoom} enablePan={enablePan} />
     </Canvas>
   )

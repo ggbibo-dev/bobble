@@ -1,11 +1,18 @@
 import { shaderMaterial } from '@react-three/drei'
 import * as THREE from 'three'
 import { blobShaderConfig } from './blob-shader'
+import { haloBlobShaderConfig } from './halo-shader'
 
 const BlobShaderMaterial = shaderMaterial(
   blobShaderConfig.uniforms,
   blobShaderConfig.vertexShader,
   blobShaderConfig.fragmentShader
+)
+
+const HaloBlobShaderMaterial = shaderMaterial(
+  haloBlobShaderConfig.uniforms,
+  haloBlobShaderConfig.vertexShader,
+  haloBlobShaderConfig.fragmentShader
 )
 
 // Note: extend is called in the main component to avoid issues during testing
@@ -14,7 +21,10 @@ declare module '@react-three/fiber' {
     blobShaderMaterial: React.RefAttributes<THREE.ShaderMaterial> & {
       transparent?: boolean
     }
+    haloBlobShaderMaterial: React.RefAttributes<THREE.ShaderMaterial> & {
+      transparent?: boolean
+    }
   }
 }
 
-export { BlobShaderMaterial }
+export { BlobShaderMaterial, HaloBlobShaderMaterial }
