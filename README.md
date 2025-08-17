@@ -27,6 +27,8 @@ function App() {
         height={400}
         audioUrl="path/to/your/audio.mp3"
         className="my-blob"
+        enableZoom={true}
+        enablePan={false}
       />
     </div>
   );
@@ -35,10 +37,12 @@ function App() {
 
 ## Props
 
-- `width` (number, optional): Width of the blob container in pixels (default: 400)
-- `height` (number, optional): Height of the blob container in pixels (default: 400)
+- `width` (number, optional): Width of the blob container in pixels (default: 100% if not specified)
+- `height` (number, optional): Height of the blob container in pixels (default: 400px)
 - `audioUrl` (string, optional): URL to audio file for visualization (default: "test.mp3")
-- `className` (string, optional): Additional CSS class name
+- `className` (string, optional): Additional CSS class name for styling
+- `enableZoom` (boolean, optional): Enable zoom controls for the 3D scene (default: true)
+- `enablePan` (boolean, optional): Enable pan controls for the 3D scene (default: false)
 
 ## Features
 
@@ -46,6 +50,7 @@ function App() {
 - Audio-reactive mouth distortion
 - Click to play/pause audio
 - Customizable size and styling
+- Configurable camera controls (zoom and pan)
 - Built with Three.js and React Three Fiber
 
 ## Local Development
