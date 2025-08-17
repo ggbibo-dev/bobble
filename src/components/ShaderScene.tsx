@@ -7,7 +7,7 @@ interface ShaderSceneProps {
   audioUrl: string
   enableZoom?: boolean
   enablePan?: boolean
-  shaderType?: 'default' | 'halo'
+  shaderType?: 'default' | 'halo' | 'particle'
 }
 
 function ShaderScene({ 
@@ -23,7 +23,18 @@ function ShaderScene({
     >
       <ambientLight intensity={0.5} />
       <pointLight position={[10, 10, 10]} />
-      <BlobMesh audioUrl={audioUrl} shaderType={shaderType} />
+      
+      {shaderType === 'halo' ? (
+        <>
+          {/* Halo mesh with rim effect only */}
+          <BlobMesh audioUrl={audioUrl} shaderType="halo" />
+          {/* Particle mesh with separate alpha */}
+          <BlobMesh audioUrl={audioUrl} shaderType="particle" />
+        </>
+      ) : (
+        <BlobMesh audioUrl={audioUrl} shaderType={shaderType} />
+      )}
+      
       <OrbitControls enableZoom={enableZoom} enablePan={enablePan} />
     </Canvas>
   )

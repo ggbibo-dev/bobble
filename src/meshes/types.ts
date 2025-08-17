@@ -2,7 +2,7 @@ import { Mesh, ShaderMaterial } from 'three'
 
 export interface BlobMeshProps {
   audioUrl: string
-  shaderType?: 'default' | 'halo'
+  shaderType?: 'default' | 'halo' | 'particle'
 }
 
 export interface AudioState {

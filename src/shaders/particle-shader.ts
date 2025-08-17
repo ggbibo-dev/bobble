@@ -1,6 +1,6 @@
 import { ShaderConfig } from './types'
 
-const haloVertexShader = `
+const particleVertexShader = `
   uniform float uTime;
   uniform float uFreq;
   varying vec2 vUv;
@@ -11,16 +11,13 @@ const haloVertexShader = `
     vUv = uv;
     vPosition = position;
     vNormal = normalize(normalMatrix * normal);
-    
-    // Simple position calculation - no time multiplication that causes expansion
     gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
   }
 `
 
-const haloFragmentShader = `
+const particleFragmentShader = `
   uniform float uTime;
   uniform float uFreq;
-  uniform float uIntensity;
   uniform vec3 ucameraPosition;
   varying vec2 vUv;
   varying vec3 vPosition;
@@ -63,8 +60,8 @@ const haloFragmentShader = `
       
       // Audio-responsive movement
       vec2 audioOffset = vec2(
-        sin(time * speed + layer * 1.5) * 0.1 * freq,
-        cos(time * speed * 0.7 + layer * 2.1) * 0.1 * freq
+        sin(time * speed + layer * 1.5) * 0.05 * freq,
+        cos(time * speed * 0.7 + layer * 2.1) * 0.05 * freq
       );
       
       // Apply audio offset to UV coordinates for particle movement
@@ -73,7 +70,7 @@ const haloFragmentShader = `
       
       // Adjust threshold based on fresnel - lower threshold in fresnel regions
       float baseThreshold = 0.99 + layer * 0.008; // Lowered base threshold for more particles
-      float fresnelInfluence = fresnel * 1.0; // Increased fresnel influence
+      float fresnelInfluence = fresnel * 0.95; // Increased fresnel influence
       float threshold = baseThreshold - fresnelInfluence;
       
       float particle = step(threshold, noiseVal);
@@ -94,47 +91,25 @@ const haloFragmentShader = `
     // Calculate view direction from camera position for proper rim effect
     vec3 viewDirection = normalize(ucameraPosition - vPosition);
     
-    // Calculate fresnel effect using dot product
+    // Calculate fresnel effect using dot product for particle distribution
     float fresnel = dot(vNormal, viewDirection);
     fresnel = 1.0 - fresnel; // Invert to get higher values at the rim
-
-    float control = 3.5; // Control the sharpness of the rim (lower less sharp)
-    fresnel = pow(fresnel, control); // Apply power for control over falloff and sharpness
+    fresnel = pow(fresnel, 3.5); // Apply power for control over falloff and sharpness
     
     // Create particles that respond to audio
     float particleDensity = particles(vUv, uTime, uFreq, fresnel);
     
-    // Basic lighting for depth
-    vec3 lightDirection = normalize(vec3(1.0, 1.0, 1.0));
-    float diffuse = max(0.0, dot(vNormal, lightDirection));
+    // Particle color and alpha - separate from rim
+    vec3 particleColor = vec3(0.1, 0.02, 0.1); // Dark navy for particles
+    float alpha = particleDensity * 1.0; // Separate alpha for particles
     
-    // Colors
-    vec3 baseColor = vec3(0.01, 0.02, 0.1); // Very dark navy
-    vec3 rimColor = vec3(0.2, 0.4, 1.0); // Bright blue for halo
-    vec3 particleColor = vec3(0.2, 0.4, 1.0); // Bright blue-white for particles
-    
-    // Start with base lighting
-    vec3 finalColor = baseColor * (0.2 + 0.3 * diffuse);
-    
-    // Add the fresnel rim effect
-    finalColor = mix(finalColor, rimColor, fresnel * 0.8);
-    
-    // Add particles on top with higher opacity
-    if (particleDensity > 0.0) {
-      finalColor = mix(finalColor, particleColor, particleDensity);
-    }
-    
-    // Alpha - combine fresnel and particles with higher particle contribution
-    float alpha = fresnel * 0.9;
-    alpha = max(alpha, particleDensity * 0.8); // Increased particle alpha contribution
-    
-    gl_FragColor = vec4(finalColor, alpha);
+    gl_FragColor = vec4(particleColor, alpha);
   }
 `
 
-export const haloBlobShaderConfig: ShaderConfig = {
-  vertexShader: haloVertexShader,
-  fragmentShader: haloFragmentShader,
+export const particleShaderConfig: ShaderConfig = {
+  vertexShader: particleVertexShader,
+  fragmentShader: particleFragmentShader,
   uniforms: {
     uTime: { value: 0 },
     uFreq: { value: 0 },
@@ -143,4 +118,3 @@ export const haloBlobShaderConfig: ShaderConfig = {
     transparent: true
   }
 }
-

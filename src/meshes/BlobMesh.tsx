@@ -62,6 +62,8 @@ function BlobMesh({ audioUrl, shaderType = 'default' }: BlobMeshProps) {
       <icosahedronGeometry args={[4, 100]} />
       {shaderType === 'halo' ? (
         <haloBlobShaderMaterial transparent={true} />
+      ) : shaderType === 'particle' ? (
+        <particleShaderMaterial transparent={true} />
       ) : (
         <blobShaderMaterial transparent={true} />
       )}

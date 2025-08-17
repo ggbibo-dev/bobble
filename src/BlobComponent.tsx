@@ -3,12 +3,13 @@ import { extend } from '@react-three/fiber'
 import { IcosahedronGeometry } from 'three'
 import * as THREE from 'three'
 import { ShaderScene } from './components/ShaderScene'
-import { BlobShaderMaterial, HaloBlobShaderMaterial } from './shaders'
+import { BlobShaderMaterial, HaloBlobShaderMaterial, ParticleShaderMaterial } from './shaders'
 
 // Register the custom shader material
 extend({
   BlobShaderMaterial,
   HaloBlobShaderMaterial,
+  ParticleShaderMaterial,
   Mesh: THREE.Mesh,
   IcosahedronGeometry: IcosahedronGeometry,
 })

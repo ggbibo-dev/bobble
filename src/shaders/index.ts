@@ -1,4 +1,5 @@
 export * from './types'
 export * from './blob-shader'
 export * from './halo-shader'
-export { BlobShaderMaterial, HaloBlobShaderMaterial } from './shader-registry'
+export * from './particle-shader'
+export { BlobShaderMaterial, HaloBlobShaderMaterial, ParticleShaderMaterial } from './shader-registry'
