@@ -21,7 +21,7 @@ export interface BlobComponentProps {
   className?: string
   enableZoom?: boolean
   enablePan?: boolean
-  shaderType?: 'default' | 'halo'
+  shaderType?: 'default' | 'halo' | 'particle'
 }
 
 function BlobComponent({ 

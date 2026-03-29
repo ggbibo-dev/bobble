@@ -1,9 +1,9 @@
 :root {
   color: #f8f4ee;
   background:
-    radial-gradient(circle at top left, rgba(255, 173, 96, 0.28), transparent 34%),
-    radial-gradient(circle at top right, rgba(101, 213, 255, 0.24), transparent 28%),
-    linear-gradient(180deg, #0c1018 0%, #141a24 100%);
+    radial-gradient(circle at top left, rgba(255, 173, 96, 0.2), transparent 28%),
+    radial-gradient(circle at top right, rgba(101, 213, 255, 0.18), transparent 24%),
+    linear-gradient(180deg, #080b13 0%, #111723 100%);
   font-family:
     'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
 }
@@ -23,46 +23,37 @@ body {
 
 .preview-page {
   display: grid;
-  gap: 2rem;
-  padding: 2rem;
-}
-
-.preview-hero,
-.preview-grid {
-  display: grid;
   gap: 1.5rem;
-}
-
-.preview-hero {
-  grid-template-columns: minmax(18rem, 0.72fr) minmax(0, 1.28fr);
-  align-items: stretch;
-}
-
-.preview-hero__copy,
-.preview-hero__stage,
-.preview-card,
-.preview-shell {
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.03));
-  backdrop-filter: blur(12px);
-  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.28);
-}
-
-.preview-hero__copy,
-.preview-hero__stage,
-.preview-card {
   padding: 1.5rem;
-  border-radius: 1.75rem;
 }
 
-.preview-hero__copy {
+.preview-grid,
+.preview-stage,
+.preview-stage__header,
+.preview-stage__surface {
   display: grid;
-  align-content: end;
   gap: 1rem;
 }
 
-.preview-hero__copy p,
-.preview-card__copy p {
+.preview-stage {
+  position: relative;
+  overflow: hidden;
+  padding: 1.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1.6rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.28);
+}
+
+.preview-stage::before {
+  content: '';
+  position: absolute;
+  inset: 1rem;
+  border-radius: 1.15rem;
+  pointer-events: none;
+}
+
+.preview-stage__header p {
   margin: 0;
   color: rgba(248, 244, 238, 0.68);
   letter-spacing: 0.18em;
@@ -70,91 +61,87 @@ body {
   font-size: 0.74rem;
 }
 
-.preview-hero__copy h1,
-.preview-card__copy h2 {
+.preview-stage__header h1,
+.preview-stage__header h2 {
   margin: 0;
   line-height: 0.92;
   letter-spacing: -0.05em;
 }
 
-.preview-hero__copy h1 {
-  font-size: clamp(3.75rem, 10vw, 7rem);
+.preview-stage__header h1 {
+  font-size: clamp(3.75rem, 10vw, 6rem);
 }
 
-.preview-hero__copy span {
-  max-width: 24rem;
-  line-height: 1.7;
-  color: rgba(248, 244, 238, 0.82);
-}
-
-.preview-hero__stage,
-.preview-card canvas,
-.preview-shell canvas {
-  border-radius: 1.75rem;
-}
-
-.preview-hero__stage,
-.preview-card,
-.preview-shell {
-  position: relative;
-  overflow: hidden;
-}
-
-.preview-hero__stage {
-  display: grid;
-  align-items: center;
-  min-height: 100%;
-  background:
-    radial-gradient(circle at 50% 45%, rgba(255, 239, 220, 0.18), transparent 28%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
-}
-
-.preview-hero__stage::before,
-.preview-card::before,
-.preview-shell::before {
-  content: '';
-  position: absolute;
-  inset: 1rem;
-  border-radius: 1.4rem;
-  background: radial-gradient(circle at 50% 50%, rgba(255, 244, 232, 0.12), transparent 42%);
-  pointer-events: none;
+.preview-stage__header h2 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
 }
 
 .preview-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(12, minmax(0, 1fr));
 }
 
-.preview-card {
-  display: grid;
-  gap: 1rem;
+.preview-stage--hero {
+  min-height: 46rem;
+}
+
+.preview-stage--hero::before {
   background:
-    radial-gradient(circle at 50% 55%, rgba(130, 192, 255, 0.12), transparent 34%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03));
+    radial-gradient(circle at 50% 32%, rgba(255, 229, 201, 0.16), transparent 26%),
+    radial-gradient(circle at 65% 18%, rgba(76, 149, 255, 0.12), transparent 28%);
 }
 
-.preview-card__copy {
-  display: grid;
-  gap: 0.35rem;
+.preview-stage--default {
+  grid-column: span 4;
 }
 
-.preview-card__copy h2 {
-  font-size: clamp(1.8rem, 4vw, 2.6rem);
+.preview-stage--default::before {
+  background: radial-gradient(circle at 50% 45%, rgba(162, 189, 255, 0.12), transparent 30%);
+}
+
+.preview-stage--particle {
+  grid-column: span 4;
+}
+
+.preview-stage--particle::before {
+  background: radial-gradient(circle at 50% 45%, rgba(98, 224, 255, 0.12), transparent 30%);
+}
+
+.preview-stage--halo {
+  grid-column: span 4;
+}
+
+.preview-stage--halo::before {
+  background: radial-gradient(circle at 50% 45%, rgba(255, 213, 177, 0.12), transparent 30%);
+}
+
+.preview-stage--embed {
+  grid-column: span 12;
+}
+
+.preview-stage__surface {
+  position: relative;
+  overflow: hidden;
+  align-items: center;
+  min-height: 20rem;
+  border-radius: 1.2rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
+}
+
+.preview-stage__surface--hero {
+  min-height: 38rem;
+}
+
+.preview-stage__surface--wide {
+  justify-items: center;
+  padding: 1rem;
 }
 
 .preview-shell {
-  display: grid;
-  gap: 1rem;
-  padding: 1rem;
-  border-radius: 1.4rem;
-  background:
-    radial-gradient(circle at 50% 55%, rgba(255, 217, 171, 0.12), transparent 34%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.03));
-}
-
-.preview-shell__meta {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
+  width: 100%;
+  padding: 0.2rem 0.2rem 0;
   color: rgba(248, 244, 238, 0.75);
   font-size: 0.92rem;
 }
@@ -163,16 +150,24 @@ body {
   margin: 0 auto;
 }
 
-.preview-hero__stage canvas,
-.preview-card canvas,
-.preview-shell canvas {
-  filter: brightness(1.25) saturate(1.18) contrast(1.08);
+.preview-stage canvas {
+  filter: brightness(1.42) saturate(1.3) contrast(1.16);
+}
+
+.preview-stage--particle canvas {
+  filter: brightness(1.75) saturate(1.42) contrast(1.08);
 }
 
 @media (max-width: 960px) {
-  .preview-hero,
   .preview-grid {
     grid-template-columns: 1fr;
+  }
+
+  .preview-stage--default,
+  .preview-stage--particle,
+  .preview-stage--halo,
+  .preview-stage--embed {
+    grid-column: span 1;
   }
 
   .preview-page {
