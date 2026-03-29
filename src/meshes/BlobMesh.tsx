@@ -52,13 +52,15 @@ function BlobMesh({ audioUrl, shaderType = 'default' }: BlobMeshProps) {
       scale={[1, 1, 1]}
       rotation={[Math.PI / 2, 0, 0]}
     >
-      <PositionalAudio 
-        url={audioUrl} 
-        distance={7} 
-        loop 
-        ref={sound} 
-        autoplay={true} 
-      />
+      {audioUrl ? (
+        <PositionalAudio
+          url={audioUrl}
+          distance={7}
+          loop
+          ref={sound}
+          autoplay={true}
+        />
+      ) : null}
       <icosahedronGeometry args={[4, 100]} />
       {shaderType === 'halo' ? (
         <haloBlobShaderMaterial transparent={true} />

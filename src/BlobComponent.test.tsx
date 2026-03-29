@@ -37,7 +37,8 @@ vi.mock('./shaders', () => ({
     }
   },
   BlobShaderMaterial: vi.fn(),
-  HaloBlobShaderMaterial: vi.fn()
+  HaloBlobShaderMaterial: vi.fn(),
+  ParticleShaderMaterial: vi.fn(),
 }))
 
 describe('BlobComponent', () => {
@@ -61,6 +62,12 @@ describe('BlobComponent', () => {
 
   it('renders with custom audio URL', () => {
     render(<BlobComponent audioUrl="custom-audio.mp3" />)
+    const container = screen.getByTestId('canvas')
+    expect(container).toBeInTheDocument()
+  })
+
+  it('renders without audio when passed an empty string', () => {
+    render(<BlobComponent audioUrl="" />)
     const container = screen.getByTestId('canvas')
     expect(container).toBeInTheDocument()
   })
