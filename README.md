@@ -29,6 +29,7 @@ function App() {
         className="my-blob"
         enableZoom={true}
         enablePan={false}
+        shaderType="halo"
       />
     </div>
   );
@@ -43,6 +44,12 @@ function App() {
 - `className` (string, optional): Additional CSS class name for styling
 - `enableZoom` (boolean, optional): Enable zoom controls for the 3D scene (default: true)
 - `enablePan` (boolean, optional): Enable pan controls for the 3D scene (default: false)
+- `shaderType` (`'default' | 'halo'`, optional): Visual variant to render (default: `'default'`)
+
+## Variants
+
+- `default`: Single-pass deforming blob with audio-reactive mouth and glossy water shading
+- `halo`: Layered halo + particle rendering around the blob silhouette
 
 ## Features
 

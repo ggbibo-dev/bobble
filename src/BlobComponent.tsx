@@ -2,6 +2,7 @@
 import { extend } from '@react-three/fiber'
 import { IcosahedronGeometry } from 'three'
 import * as THREE from 'three'
+import { BlobVariant } from './blob-variants'
 import { ShaderScene } from './components/ShaderScene'
 import { BlobShaderMaterial, HaloBlobShaderMaterial, ParticleShaderMaterial } from './shaders'
 
@@ -21,7 +22,7 @@ export interface BlobComponentProps {
   className?: string
   enableZoom?: boolean
   enablePan?: boolean
-  shaderType?: 'default' | 'halo' | 'particle'
+  shaderType?: BlobVariant
 }
 
 function BlobComponent({ 

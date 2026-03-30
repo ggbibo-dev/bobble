@@ -1,8 +1,9 @@
 import { Mesh, ShaderMaterial } from 'three'
+import { BlobRenderPass } from '../blob-variants'
 
 export interface BlobMeshProps {
   audioUrl?: string
-  shaderType?: 'default' | 'halo' | 'particle'
+  shaderType?: BlobRenderPass
 }
 
 export interface AudioState {

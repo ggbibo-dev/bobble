@@ -66,8 +66,8 @@ describe('BlobComponent', () => {
     expect(container).toBeInTheDocument()
   })
 
-  it('renders without audio when passed an empty string', () => {
-    render(<BlobComponent audioUrl="" />)
+  it('renders without an audio URL', () => {
+    render(<BlobComponent />)
     const container = screen.getByTestId('canvas')
     expect(container).toBeInTheDocument()
   })

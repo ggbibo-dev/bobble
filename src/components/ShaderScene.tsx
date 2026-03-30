@@ -1,13 +1,14 @@
 
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
+import { BlobVariant, blobVariantPasses } from '../blob-variants'
 import { BlobMesh } from '../meshes'
 
 interface ShaderSceneProps {
   audioUrl?: string
   enableZoom?: boolean
   enablePan?: boolean
-  shaderType?: 'default' | 'halo' | 'particle'
+  shaderType?: BlobVariant
 }
 
 function ShaderScene({ 
@@ -24,16 +25,13 @@ function ShaderScene({
       <ambientLight intensity={0.5} />
       <pointLight position={[10, 10, 10]} />
       
-      {shaderType === 'halo' ? (
-        <>
-          {/* Halo mesh with rim effect only */}
-          <BlobMesh audioUrl={audioUrl} shaderType="halo" />
-          {/* Particle mesh with separate alpha */}
-          <BlobMesh audioUrl={audioUrl} shaderType="particle" />
-        </>
-      ) : (
-        <BlobMesh audioUrl={audioUrl} shaderType={shaderType} />
-      )}
+      {blobVariantPasses[shaderType].map((renderPass) => (
+        <BlobMesh
+          key={`${shaderType}-${renderPass}`}
+          audioUrl={audioUrl}
+          shaderType={renderPass}
+        />
+      ))}
       
       <OrbitControls enableZoom={enableZoom} enablePan={enablePan} />
     </Canvas>
