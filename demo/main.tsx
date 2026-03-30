@@ -10,6 +10,7 @@ import {
   HaloBlobShaderMaterial,
   ParticleShaderMaterial,
 } from '../src'
+import demoTone from '../src/demo-assets/demo-tone.wav'
 import './preview.css'
 
 extend({
@@ -22,7 +23,13 @@ extend({
 
 type BlobShaderType = 'default' | 'halo' | 'particle'
 
-function BlobEntity({ shaderType }: { shaderType: BlobShaderType }) {
+function BlobEntity({
+  shaderType,
+  audioUrl,
+}: {
+  shaderType: BlobShaderType
+  audioUrl?: string
+}) {
   const transform = {
     position: [0, 0.7, 0] as [number, number, number],
     rotation: [-0.2, -0.58, 0.05] as [number, number, number],
@@ -32,15 +39,15 @@ function BlobEntity({ shaderType }: { shaderType: BlobShaderType }) {
   if (shaderType === 'halo') {
     return (
       <group {...transform}>
-        <BlobMesh audioUrl="" shaderType="halo" />
-        <BlobMesh audioUrl="" shaderType="particle" />
+        <BlobMesh audioUrl={audioUrl} shaderType="halo" />
+        <BlobMesh audioUrl={audioUrl} shaderType="particle" />
       </group>
     )
   }
 
   return (
     <group {...transform}>
-      <BlobMesh audioUrl="" shaderType={shaderType} />
+      <BlobMesh audioUrl={audioUrl} shaderType={shaderType} />
     </group>
   )
 }
@@ -105,15 +112,17 @@ function StageScaffold({ shaderType }: { shaderType: BlobShaderType }) {
 function BlobStage({
   shaderType,
   className,
+  audioUrl,
 }: {
   shaderType: BlobShaderType
   className?: string
+  audioUrl?: string
 }) {
   return (
     <div className={className}>
       <Canvas camera={{ position: [0, 0.8, 14.5], fov: 48 }}>
         <StageScaffold shaderType={shaderType} />
-        <BlobEntity shaderType={shaderType} />
+        <BlobEntity shaderType={shaderType} audioUrl={audioUrl} />
         <OrbitControls
           enablePan={false}
           enableZoom={false}
@@ -134,9 +143,14 @@ function PreviewApp() {
         <div className="preview-stage__header">
           <p>blobble</p>
           <h1>Halo</h1>
+          <span className="preview-stage__hint">Click blob to play the bundled tone.</span>
         </div>
         <div className="preview-stage__surface preview-stage__surface--hero">
-          <BlobStage className="blob-scene blob-scene--hero" shaderType="halo" />
+          <BlobStage
+            className="blob-scene blob-scene--hero"
+            shaderType="halo"
+            audioUrl={demoTone}
+          />
         </div>
       </section>
 
@@ -165,9 +179,10 @@ function PreviewApp() {
           <div className="preview-stage__header">
             <p>shader</p>
             <h2>Halo</h2>
+            <span className="preview-stage__hint">Audio-reactive demo state.</span>
           </div>
           <div className="preview-stage__surface">
-            <BlobStage className="blob-scene" shaderType="halo" />
+            <BlobStage className="blob-scene" shaderType="halo" audioUrl={demoTone} />
           </div>
         </section>
 

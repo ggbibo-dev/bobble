@@ -61,6 +61,12 @@ body {
   font-size: 0.74rem;
 }
 
+.preview-stage__hint {
+  color: rgba(248, 244, 238, 0.62);
+  font-size: 0.9rem;
+  letter-spacing: 0.01em;
+}
+
 .preview-stage__header h1,
 .preview-stage__header h2 {
   margin: 0;
