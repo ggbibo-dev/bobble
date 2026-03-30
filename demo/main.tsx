@@ -53,58 +53,19 @@ function BlobEntity({
 }
 
 function StageScaffold({ shaderType }: { shaderType: BlobShaderType }) {
-  const theme =
+  const fill =
     shaderType === 'particle'
-      ? {
-          background: '#0a1630',
-          fog: '#0a1630',
-          plane: '#13254a',
-          floor: '#12204a',
-          ring: '#3cbcff',
-          fill: '#70e7ff',
-        }
+      ? '#70e7ff'
       : shaderType === 'default'
-        ? {
-            background: '#101733',
-            fog: '#101733',
-            plane: '#1b2648',
-            floor: '#142042',
-            ring: '#6382ff',
-            fill: '#9fb6ff',
-          }
-        : {
-            background: '#0b1020',
-            fog: '#0b1020',
-            plane: '#121b31',
-            floor: '#101728',
-            ring: '#3354ff',
-            fill: '#7ca6ff',
-          }
+        ? '#9fb6ff'
+        : '#7ca6ff'
 
   return (
     <>
-      <color attach="background" args={[theme.background]} />
-      <fog attach="fog" args={[theme.fog, 12, 22]} />
-
       <ambientLight intensity={0.58} />
       <directionalLight intensity={1.2} position={[-5, 7, 7]} color="#dfe7ff" />
-      <pointLight intensity={2.1} position={[0, 2, 8]} color={theme.fill} />
+      <pointLight intensity={2.1} position={[0, 2, 8]} color={fill} />
       <pointLight intensity={1.5} position={[6, -1, 2]} color="#ffb88c" />
-
-      <mesh position={[0, -5.1, 0]} rotation={[-Math.PI / 2, 0, 0]}>
-        <circleGeometry args={[8.8, 96]} />
-        <meshBasicMaterial color={theme.floor} transparent={true} opacity={0.92} />
-      </mesh>
-
-      <mesh position={[0, -4.95, -1.4]} rotation={[-Math.PI / 2.8, 0, 0]}>
-        <planeGeometry args={[13, 7.5]} />
-        <meshBasicMaterial color={theme.plane} transparent={true} opacity={0.46} />
-      </mesh>
-
-      <mesh position={[0, -4.8, 0.4]} rotation={[-Math.PI / 2, 0, 0]}>
-        <ringGeometry args={[5.2, 7.3, 96]} />
-        <meshBasicMaterial color={theme.ring} transparent={true} opacity={0.18} />
-      </mesh>
     </>
   )
 }
@@ -120,7 +81,11 @@ function BlobStage({
 }) {
   return (
     <div className={className}>
-      <Canvas camera={{ position: [0, 0.8, 14.5], fov: 48 }}>
+      <Canvas
+        camera={{ position: [0, 0.8, 14.5], fov: 48 }}
+        gl={{ alpha: true }}
+        style={{ background: 'transparent' }}
+      >
         <StageScaffold shaderType={shaderType} />
         <BlobEntity shaderType={shaderType} audioUrl={audioUrl} />
         <OrbitControls
