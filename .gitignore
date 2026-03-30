@@ -8,9 +8,6 @@ yarn-error.log*
 dist/
 build/
 
-# Demo application (excluded from repository)
-demo/
-
 # Environment variables
 .env
 .env.local

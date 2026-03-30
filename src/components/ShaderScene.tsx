@@ -5,7 +5,7 @@ import { BlobVariant, blobVariantPasses } from '../blob-variants'
 import { BlobMesh } from '../meshes'
 
 interface ShaderSceneProps {
-  audioUrl: string
+  audioUrl?: string
   enableZoom?: boolean
   enablePan?: boolean
   shaderType?: BlobVariant
