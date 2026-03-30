@@ -37,7 +37,8 @@ vi.mock('./shaders', () => ({
     }
   },
   BlobShaderMaterial: vi.fn(),
-  HaloBlobShaderMaterial: vi.fn()
+  HaloBlobShaderMaterial: vi.fn(),
+  ParticleShaderMaterial: vi.fn()
 }))
 
 describe('BlobComponent', () => {
