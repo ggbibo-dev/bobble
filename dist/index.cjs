@@ -1,4 +1,4 @@
-"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const j=require("react"),oe=require("@react-three/fiber"),ke=require("three"),G=require("@react-three/drei");function Pr(p){const g=Object.create(null,{[Symbol.toStringTag]:{value:"Module"}});if(p){for(const u in p)if(u!=="default"){const f=Object.getOwnPropertyDescriptor(p,u);Object.defineProperty(g,u,f.get?f:{enumerable:!0,get:()=>p[u]})}}return g.default=p,Object.freeze(g)}const Fe=Pr(ke);var ae={exports:{}},q={};/**
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const O=require("react"),ie=require("@react-three/fiber"),ke=require("three"),V=require("@react-three/drei");function Cr(h){const p=Object.create(null,{[Symbol.toStringTag]:{value:"Module"}});if(h){for(const c in h)if(c!=="default"){const u=Object.getOwnPropertyDescriptor(h,c);Object.defineProperty(p,c,u.get?u:{enumerable:!0,get:()=>h[c]})}}return p.default=h,Object.freeze(p)}const De=Cr(ke);var oe={exports:{}},I={};/**
  * @license React
  * react-jsx-runtime.production.min.js
  *
@@ -6,7 +6,7 @@
  *
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
- */var Oe;function Er(){if(Oe)return q;Oe=1;var p=j,g=Symbol.for("react.element"),u=Symbol.for("react.fragment"),f=Object.prototype.hasOwnProperty,S=p.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner,w={key:!0,ref:!0,__self:!0,__source:!0};function _(P,v,C){var d,E={},T=null,W=null;C!==void 0&&(T=""+C),v.key!==void 0&&(T=""+v.key),v.ref!==void 0&&(W=v.ref);for(d in v)f.call(v,d)&&!w.hasOwnProperty(d)&&(E[d]=v[d]);if(P&&P.defaultProps)for(d in v=P.defaultProps,v)E[d]===void 0&&(E[d]=v[d]);return{$$typeof:g,type:P,key:T,ref:W,props:E,_owner:S.current}}return q.Fragment=u,q.jsx=_,q.jsxs=_,q}var N={};/**
+ */var Oe;function Rr(){if(Oe)return I;Oe=1;var h=O,p=Symbol.for("react.element"),c=Symbol.for("react.fragment"),u=Object.prototype.hasOwnProperty,x=h.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner,E={key:!0,ref:!0,__self:!0,__source:!0};function _(S,d,T){var v,P={},R=null,U=null;T!==void 0&&(R=""+T),d.key!==void 0&&(R=""+d.key),d.ref!==void 0&&(U=d.ref);for(v in d)u.call(d,v)&&!E.hasOwnProperty(v)&&(P[v]=d[v]);if(S&&S.defaultProps)for(v in d=S.defaultProps,d)P[v]===void 0&&(P[v]=d[v]);return{$$typeof:p,type:S,key:R,ref:U,props:P,_owner:x.current}}return I.Fragment=c,I.jsx=_,I.jsxs=_,I}var N={};/**
  * @license React
  * react-jsx-runtime.development.js
  *
@@ -14,22 +14,22 @@
  *
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
- */var je;function Rr(){return je||(je=1,process.env.NODE_ENV!=="production"&&function(){var p=j,g=Symbol.for("react.element"),u=Symbol.for("react.portal"),f=Symbol.for("react.fragment"),S=Symbol.for("react.strict_mode"),w=Symbol.for("react.profiler"),_=Symbol.for("react.provider"),P=Symbol.for("react.context"),v=Symbol.for("react.forward_ref"),C=Symbol.for("react.suspense"),d=Symbol.for("react.suspense_list"),E=Symbol.for("react.memo"),T=Symbol.for("react.lazy"),W=Symbol.for("react.offscreen"),ne=Symbol.iterator,Ne="@@iterator";function We(e){if(e===null||typeof e!="object")return null;var r=ne&&e[ne]||e[Ne];return typeof r=="function"?r:null}var k=p.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;function m(e){{for(var r=arguments.length,t=new Array(r>1?r-1:0),a=1;a<r;a++)t[a-1]=arguments[a];Ue("error",e,t)}}function Ue(e,r,t){{var a=k.ReactDebugCurrentFrame,i=a.getStackAddendum();i!==""&&(r+="%s",t=t.concat([i]));var l=t.map(function(n){return String(n)});l.unshift("Warning: "+r),Function.prototype.apply.call(console[e],console,l)}}var Ye=!1,$e=!1,Be=!1,Ve=!1,Le=!1,ie;ie=Symbol.for("react.module.reference");function Ge(e){return!!(typeof e=="string"||typeof e=="function"||e===f||e===w||Le||e===S||e===C||e===d||Ve||e===W||Ye||$e||Be||typeof e=="object"&&e!==null&&(e.$$typeof===T||e.$$typeof===E||e.$$typeof===_||e.$$typeof===P||e.$$typeof===v||e.$$typeof===ie||e.getModuleId!==void 0))}function Je(e,r,t){var a=e.displayName;if(a)return a;var i=r.displayName||r.name||"";return i!==""?t+"("+i+")":t}function le(e){return e.displayName||"Context"}function R(e){if(e==null)return null;if(typeof e.tag=="number"&&m("Received an unexpected object in getComponentNameFromType(). This is likely a bug in React. Please file an issue."),typeof e=="function")return e.displayName||e.name||null;if(typeof e=="string")return e;switch(e){case f:return"Fragment";case u:return"Portal";case w:return"Profiler";case S:return"StrictMode";case C:return"Suspense";case d:return"SuspenseList"}if(typeof e=="object")switch(e.$$typeof){case P:var r=e;return le(r)+".Consumer";case _:var t=e;return le(t._context)+".Provider";case v:return Je(e,e.render,"ForwardRef");case E:var a=e.displayName||null;return a!==null?a:R(e.type)||"Memo";case T:{var i=e,l=i._payload,n=i._init;try{return R(n(l))}catch{return null}}}return null}var z=Object.assign,M=0,se,ue,ce,fe,ve,de,me;function pe(){}pe.__reactDisabledLog=!0;function He(){{if(M===0){se=console.log,ue=console.info,ce=console.warn,fe=console.error,ve=console.group,de=console.groupCollapsed,me=console.groupEnd;var e={configurable:!0,enumerable:!0,value:pe,writable:!0};Object.defineProperties(console,{info:e,log:e,warn:e,error:e,group:e,groupCollapsed:e,groupEnd:e})}M++}}function Ke(){{if(M--,M===0){var e={configurable:!0,enumerable:!0,writable:!0};Object.defineProperties(console,{log:z({},e,{value:se}),info:z({},e,{value:ue}),warn:z({},e,{value:ce}),error:z({},e,{value:fe}),group:z({},e,{value:ve}),groupCollapsed:z({},e,{value:de}),groupEnd:z({},e,{value:me})})}M<0&&m("disabledDepth fell below zero. This is a bug in React. Please file an issue.")}}var J=k.ReactCurrentDispatcher,H;function U(e,r,t){{if(H===void 0)try{throw Error()}catch(i){var a=i.stack.trim().match(/\n( *(at )?)/);H=a&&a[1]||""}return`
-`+H+e}}var K=!1,Y;{var Xe=typeof WeakMap=="function"?WeakMap:Map;Y=new Xe}function ge(e,r){if(!e||K)return"";{var t=Y.get(e);if(t!==void 0)return t}var a;K=!0;var i=Error.prepareStackTrace;Error.prepareStackTrace=void 0;var l;l=J.current,J.current=null,He();try{if(r){var n=function(){throw Error()};if(Object.defineProperty(n.prototype,"props",{set:function(){throw Error()}}),typeof Reflect=="object"&&Reflect.construct){try{Reflect.construct(n,[])}catch(y){a=y}Reflect.construct(e,[],n)}else{try{n.call()}catch(y){a=y}e.call(n.prototype)}}else{try{throw Error()}catch(y){a=y}e()}}catch(y){if(y&&a&&typeof y.stack=="string"){for(var o=y.stack.split(`
-`),h=a.stack.split(`
-`),s=o.length-1,c=h.length-1;s>=1&&c>=0&&o[s]!==h[c];)c--;for(;s>=1&&c>=0;s--,c--)if(o[s]!==h[c]){if(s!==1||c!==1)do if(s--,c--,c<0||o[s]!==h[c]){var b=`
-`+o[s].replace(" at new "," at ");return e.displayName&&b.includes("<anonymous>")&&(b=b.replace("<anonymous>",e.displayName)),typeof e=="function"&&Y.set(e,b),b}while(s>=1&&c>=0);break}}}finally{K=!1,J.current=l,Ke(),Error.prepareStackTrace=i}var D=e?e.displayName||e.name:"",O=D?U(D):"";return typeof e=="function"&&Y.set(e,O),O}function Ze(e,r,t){return ge(e,!1)}function Qe(e){var r=e.prototype;return!!(r&&r.isReactComponent)}function $(e,r,t){if(e==null)return"";if(typeof e=="function")return ge(e,Qe(e));if(typeof e=="string")return U(e);switch(e){case C:return U("Suspense");case d:return U("SuspenseList")}if(typeof e=="object")switch(e.$$typeof){case v:return Ze(e.render);case E:return $(e.type,r,t);case T:{var a=e,i=a._payload,l=a._init;try{return $(l(i),r,t)}catch{}}}return""}var A=Object.prototype.hasOwnProperty,he={},ye=k.ReactDebugCurrentFrame;function B(e){if(e){var r=e._owner,t=$(e.type,e._source,r?r.type:null);ye.setExtraStackFrame(t)}else ye.setExtraStackFrame(null)}function er(e,r,t,a,i){{var l=Function.call.bind(A);for(var n in e)if(l(e,n)){var o=void 0;try{if(typeof e[n]!="function"){var h=Error((a||"React class")+": "+t+" type `"+n+"` is invalid; it must be a function, usually from the `prop-types` package, but received `"+typeof e[n]+"`.This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`.");throw h.name="Invariant Violation",h}o=e[n](r,n,a,t,null,"SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED")}catch(s){o=s}o&&!(o instanceof Error)&&(B(i),m("%s: type specification of %s `%s` is invalid; the type checker function must return `null` or an `Error` but returned a %s. You may have forgotten to pass an argument to the type checker creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and shape all require an argument).",a||"React class",t,n,typeof o),B(null)),o instanceof Error&&!(o.message in he)&&(he[o.message]=!0,B(i),m("Failed %s type: %s",t,o.message),B(null))}}}var rr=Array.isArray;function X(e){return rr(e)}function tr(e){{var r=typeof Symbol=="function"&&Symbol.toStringTag,t=r&&e[Symbol.toStringTag]||e.constructor.name||"Object";return t}}function ar(e){try{return be(e),!1}catch{return!0}}function be(e){return""+e}function xe(e){if(ar(e))return m("The provided key is an unsupported type %s. This value must be coerced to a string before before using it here.",tr(e)),be(e)}var I=k.ReactCurrentOwner,or={key:!0,ref:!0,__self:!0,__source:!0},_e,Pe,Z;Z={};function nr(e){if(A.call(e,"ref")){var r=Object.getOwnPropertyDescriptor(e,"ref").get;if(r&&r.isReactWarning)return!1}return e.ref!==void 0}function ir(e){if(A.call(e,"key")){var r=Object.getOwnPropertyDescriptor(e,"key").get;if(r&&r.isReactWarning)return!1}return e.key!==void 0}function lr(e,r){if(typeof e.ref=="string"&&I.current&&r&&I.current.stateNode!==r){var t=R(I.current.type);Z[t]||(m('Component "%s" contains the string ref "%s". Support for string refs will be removed in a future major release. This case cannot be automatically converted to an arrow function. We ask you to manually fix this case by using useRef() or createRef() instead. Learn more about using refs safely here: https://reactjs.org/link/strict-mode-string-ref',R(I.current.type),e.ref),Z[t]=!0)}}function sr(e,r){{var t=function(){_e||(_e=!0,m("%s: `key` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://reactjs.org/link/special-props)",r))};t.isReactWarning=!0,Object.defineProperty(e,"key",{get:t,configurable:!0})}}function ur(e,r){{var t=function(){Pe||(Pe=!0,m("%s: `ref` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://reactjs.org/link/special-props)",r))};t.isReactWarning=!0,Object.defineProperty(e,"ref",{get:t,configurable:!0})}}var cr=function(e,r,t,a,i,l,n){var o={$$typeof:g,type:e,key:r,ref:t,props:n,_owner:l};return o._store={},Object.defineProperty(o._store,"validated",{configurable:!1,enumerable:!1,writable:!0,value:!1}),Object.defineProperty(o,"_self",{configurable:!1,enumerable:!1,writable:!1,value:a}),Object.defineProperty(o,"_source",{configurable:!1,enumerable:!1,writable:!1,value:i}),Object.freeze&&(Object.freeze(o.props),Object.freeze(o)),o};function fr(e,r,t,a,i){{var l,n={},o=null,h=null;t!==void 0&&(xe(t),o=""+t),ir(r)&&(xe(r.key),o=""+r.key),nr(r)&&(h=r.ref,lr(r,i));for(l in r)A.call(r,l)&&!or.hasOwnProperty(l)&&(n[l]=r[l]);if(e&&e.defaultProps){var s=e.defaultProps;for(l in s)n[l]===void 0&&(n[l]=s[l])}if(o||h){var c=typeof e=="function"?e.displayName||e.name||"Unknown":e;o&&sr(n,c),h&&ur(n,c)}return cr(e,o,h,i,a,I.current,n)}}var Q=k.ReactCurrentOwner,Ee=k.ReactDebugCurrentFrame;function F(e){if(e){var r=e._owner,t=$(e.type,e._source,r?r.type:null);Ee.setExtraStackFrame(t)}else Ee.setExtraStackFrame(null)}var ee;ee=!1;function re(e){return typeof e=="object"&&e!==null&&e.$$typeof===g}function Re(){{if(Q.current){var e=R(Q.current.type);if(e)return`
+ */var je;function Er(){return je||(je=1,process.env.NODE_ENV!=="production"&&function(){var h=O,p=Symbol.for("react.element"),c=Symbol.for("react.portal"),u=Symbol.for("react.fragment"),x=Symbol.for("react.strict_mode"),E=Symbol.for("react.profiler"),_=Symbol.for("react.provider"),S=Symbol.for("react.context"),d=Symbol.for("react.forward_ref"),T=Symbol.for("react.suspense"),v=Symbol.for("react.suspense_list"),P=Symbol.for("react.memo"),R=Symbol.for("react.lazy"),U=Symbol.for("react.offscreen"),ne=Symbol.iterator,Be="@@iterator";function We(e){if(e===null||typeof e!="object")return null;var r=ne&&e[ne]||e[Be];return typeof r=="function"?r:null}var j=h.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;function m(e){{for(var r=arguments.length,t=new Array(r>1?r-1:0),a=1;a<r;a++)t[a-1]=arguments[a];$e("error",e,t)}}function $e(e,r,t){{var a=j.ReactDebugCurrentFrame,n=a.getStackAddendum();n!==""&&(r+="%s",t=t.concat([n]));var l=t.map(function(i){return String(i)});l.unshift("Warning: "+r),Function.prototype.apply.call(console[e],console,l)}}var Ye=!1,Le=!1,Ge=!1,Je=!1,He=!1,le;le=Symbol.for("react.module.reference");function Ke(e){return!!(typeof e=="string"||typeof e=="function"||e===u||e===E||He||e===x||e===T||e===v||Je||e===U||Ye||Le||Ge||typeof e=="object"&&e!==null&&(e.$$typeof===R||e.$$typeof===P||e.$$typeof===_||e.$$typeof===S||e.$$typeof===d||e.$$typeof===le||e.getModuleId!==void 0))}function Xe(e,r,t){var a=e.displayName;if(a)return a;var n=r.displayName||r.name||"";return n!==""?t+"("+n+")":t}function se(e){return e.displayName||"Context"}function C(e){if(e==null)return null;if(typeof e.tag=="number"&&m("Received an unexpected object in getComponentNameFromType(). This is likely a bug in React. Please file an issue."),typeof e=="function")return e.displayName||e.name||null;if(typeof e=="string")return e;switch(e){case u:return"Fragment";case c:return"Portal";case E:return"Profiler";case x:return"StrictMode";case T:return"Suspense";case v:return"SuspenseList"}if(typeof e=="object")switch(e.$$typeof){case S:var r=e;return se(r)+".Consumer";case _:var t=e;return se(t._context)+".Provider";case d:return Xe(e,e.render,"ForwardRef");case P:var a=e.displayName||null;return a!==null?a:C(e.type)||"Memo";case R:{var n=e,l=n._payload,i=n._init;try{return C(i(l))}catch{return null}}}return null}var z=Object.assign,M=0,ce,fe,ue,ve,de,pe,me;function he(){}he.__reactDisabledLog=!0;function Ze(){{if(M===0){ce=console.log,fe=console.info,ue=console.warn,ve=console.error,de=console.group,pe=console.groupCollapsed,me=console.groupEnd;var e={configurable:!0,enumerable:!0,value:he,writable:!0};Object.defineProperties(console,{info:e,log:e,warn:e,error:e,group:e,groupCollapsed:e,groupEnd:e})}M++}}function Qe(){{if(M--,M===0){var e={configurable:!0,enumerable:!0,writable:!0};Object.defineProperties(console,{log:z({},e,{value:ce}),info:z({},e,{value:fe}),warn:z({},e,{value:ue}),error:z({},e,{value:ve}),group:z({},e,{value:de}),groupCollapsed:z({},e,{value:pe}),groupEnd:z({},e,{value:me})})}M<0&&m("disabledDepth fell below zero. This is a bug in React. Please file an issue.")}}var H=j.ReactCurrentDispatcher,K;function B(e,r,t){{if(K===void 0)try{throw Error()}catch(n){var a=n.stack.trim().match(/\n( *(at )?)/);K=a&&a[1]||""}return`
+`+K+e}}var X=!1,W;{var er=typeof WeakMap=="function"?WeakMap:Map;W=new er}function ge(e,r){if(!e||X)return"";{var t=W.get(e);if(t!==void 0)return t}var a;X=!0;var n=Error.prepareStackTrace;Error.prepareStackTrace=void 0;var l;l=H.current,H.current=null,Ze();try{if(r){var i=function(){throw Error()};if(Object.defineProperty(i.prototype,"props",{set:function(){throw Error()}}),typeof Reflect=="object"&&Reflect.construct){try{Reflect.construct(i,[])}catch(y){a=y}Reflect.construct(e,[],i)}else{try{i.call()}catch(y){a=y}e.call(i.prototype)}}else{try{throw Error()}catch(y){a=y}e()}}catch(y){if(y&&a&&typeof y.stack=="string"){for(var o=y.stack.split(`
+`),g=a.stack.split(`
+`),s=o.length-1,f=g.length-1;s>=1&&f>=0&&o[s]!==g[f];)f--;for(;s>=1&&f>=0;s--,f--)if(o[s]!==g[f]){if(s!==1||f!==1)do if(s--,f--,f<0||o[s]!==g[f]){var w=`
+`+o[s].replace(" at new "," at ");return e.displayName&&w.includes("<anonymous>")&&(w=w.replace("<anonymous>",e.displayName)),typeof e=="function"&&W.set(e,w),w}while(s>=1&&f>=0);break}}}finally{X=!1,H.current=l,Qe(),Error.prepareStackTrace=n}var D=e?e.displayName||e.name:"",F=D?B(D):"";return typeof e=="function"&&W.set(e,F),F}function rr(e,r,t){return ge(e,!1)}function tr(e){var r=e.prototype;return!!(r&&r.isReactComponent)}function $(e,r,t){if(e==null)return"";if(typeof e=="function")return ge(e,tr(e));if(typeof e=="string")return B(e);switch(e){case T:return B("Suspense");case v:return B("SuspenseList")}if(typeof e=="object")switch(e.$$typeof){case d:return rr(e.render);case P:return $(e.type,r,t);case R:{var a=e,n=a._payload,l=a._init;try{return $(l(n),r,t)}catch{}}}return""}var A=Object.prototype.hasOwnProperty,ye={},be=j.ReactDebugCurrentFrame;function Y(e){if(e){var r=e._owner,t=$(e.type,e._source,r?r.type:null);be.setExtraStackFrame(t)}else be.setExtraStackFrame(null)}function ar(e,r,t,a,n){{var l=Function.call.bind(A);for(var i in e)if(l(e,i)){var o=void 0;try{if(typeof e[i]!="function"){var g=Error((a||"React class")+": "+t+" type `"+i+"` is invalid; it must be a function, usually from the `prop-types` package, but received `"+typeof e[i]+"`.This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`.");throw g.name="Invariant Violation",g}o=e[i](r,i,a,t,null,"SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED")}catch(s){o=s}o&&!(o instanceof Error)&&(Y(n),m("%s: type specification of %s `%s` is invalid; the type checker function must return `null` or an `Error` but returned a %s. You may have forgotten to pass an argument to the type checker creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and shape all require an argument).",a||"React class",t,i,typeof o),Y(null)),o instanceof Error&&!(o.message in ye)&&(ye[o.message]=!0,Y(n),m("Failed %s type: %s",t,o.message),Y(null))}}}var or=Array.isArray;function Z(e){return or(e)}function ir(e){{var r=typeof Symbol=="function"&&Symbol.toStringTag,t=r&&e[Symbol.toStringTag]||e.constructor.name||"Object";return t}}function nr(e){try{return xe(e),!1}catch{return!0}}function xe(e){return""+e}function Pe(e){if(nr(e))return m("The provided key is an unsupported type %s. This value must be coerced to a string before before using it here.",ir(e)),xe(e)}var q=j.ReactCurrentOwner,lr={key:!0,ref:!0,__self:!0,__source:!0},we,_e,Q;Q={};function sr(e){if(A.call(e,"ref")){var r=Object.getOwnPropertyDescriptor(e,"ref").get;if(r&&r.isReactWarning)return!1}return e.ref!==void 0}function cr(e){if(A.call(e,"key")){var r=Object.getOwnPropertyDescriptor(e,"key").get;if(r&&r.isReactWarning)return!1}return e.key!==void 0}function fr(e,r){if(typeof e.ref=="string"&&q.current&&r&&q.current.stateNode!==r){var t=C(q.current.type);Q[t]||(m('Component "%s" contains the string ref "%s". Support for string refs will be removed in a future major release. This case cannot be automatically converted to an arrow function. We ask you to manually fix this case by using useRef() or createRef() instead. Learn more about using refs safely here: https://reactjs.org/link/strict-mode-string-ref',C(q.current.type),e.ref),Q[t]=!0)}}function ur(e,r){{var t=function(){we||(we=!0,m("%s: `key` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://reactjs.org/link/special-props)",r))};t.isReactWarning=!0,Object.defineProperty(e,"key",{get:t,configurable:!0})}}function vr(e,r){{var t=function(){_e||(_e=!0,m("%s: `ref` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://reactjs.org/link/special-props)",r))};t.isReactWarning=!0,Object.defineProperty(e,"ref",{get:t,configurable:!0})}}var dr=function(e,r,t,a,n,l,i){var o={$$typeof:p,type:e,key:r,ref:t,props:i,_owner:l};return o._store={},Object.defineProperty(o._store,"validated",{configurable:!1,enumerable:!1,writable:!0,value:!1}),Object.defineProperty(o,"_self",{configurable:!1,enumerable:!1,writable:!1,value:a}),Object.defineProperty(o,"_source",{configurable:!1,enumerable:!1,writable:!1,value:n}),Object.freeze&&(Object.freeze(o.props),Object.freeze(o)),o};function pr(e,r,t,a,n){{var l,i={},o=null,g=null;t!==void 0&&(Pe(t),o=""+t),cr(r)&&(Pe(r.key),o=""+r.key),sr(r)&&(g=r.ref,fr(r,n));for(l in r)A.call(r,l)&&!lr.hasOwnProperty(l)&&(i[l]=r[l]);if(e&&e.defaultProps){var s=e.defaultProps;for(l in s)i[l]===void 0&&(i[l]=s[l])}if(o||g){var f=typeof e=="function"?e.displayName||e.name||"Unknown":e;o&&ur(i,f),g&&vr(i,f)}return dr(e,o,g,n,a,q.current,i)}}var ee=j.ReactCurrentOwner,Se=j.ReactDebugCurrentFrame;function k(e){if(e){var r=e._owner,t=$(e.type,e._source,r?r.type:null);Se.setExtraStackFrame(t)}else Se.setExtraStackFrame(null)}var re;re=!1;function te(e){return typeof e=="object"&&e!==null&&e.$$typeof===p}function Ce(){{if(ee.current){var e=C(ee.current.type);if(e)return`
 
-Check the render method of \``+e+"`."}return""}}function vr(e){{if(e!==void 0){var r=e.fileName.replace(/^.*[\\\/]/,""),t=e.lineNumber;return`
+Check the render method of \``+e+"`."}return""}}function mr(e){{if(e!==void 0){var r=e.fileName.replace(/^.*[\\\/]/,""),t=e.lineNumber;return`
 
-Check your code at `+r+":"+t+"."}return""}}var Se={};function dr(e){{var r=Re();if(!r){var t=typeof e=="string"?e:e.displayName||e.name;t&&(r=`
+Check your code at `+r+":"+t+"."}return""}}var Re={};function hr(e){{var r=Ce();if(!r){var t=typeof e=="string"?e:e.displayName||e.name;t&&(r=`
 
-Check the top-level render call using <`+t+">.")}return r}}function Ce(e,r){{if(!e._store||e._store.validated||e.key!=null)return;e._store.validated=!0;var t=dr(r);if(Se[t])return;Se[t]=!0;var a="";e&&e._owner&&e._owner!==Q.current&&(a=" It was passed a child from "+R(e._owner.type)+"."),F(e),m('Each child in a list should have a unique "key" prop.%s%s See https://reactjs.org/link/warning-keys for more information.',t,a),F(null)}}function we(e,r){{if(typeof e!="object")return;if(X(e))for(var t=0;t<e.length;t++){var a=e[t];re(a)&&Ce(a,r)}else if(re(e))e._store&&(e._store.validated=!0);else if(e){var i=We(e);if(typeof i=="function"&&i!==e.entries)for(var l=i.call(e),n;!(n=l.next()).done;)re(n.value)&&Ce(n.value,r)}}}function mr(e){{var r=e.type;if(r==null||typeof r=="string")return;var t;if(typeof r=="function")t=r.propTypes;else if(typeof r=="object"&&(r.$$typeof===v||r.$$typeof===E))t=r.propTypes;else return;if(t){var a=R(r);er(t,e.props,"prop",a,e)}else if(r.PropTypes!==void 0&&!ee){ee=!0;var i=R(r);m("Component %s declared `PropTypes` instead of `propTypes`. Did you misspell the property assignment?",i||"Unknown")}typeof r.getDefaultProps=="function"&&!r.getDefaultProps.isReactClassApproved&&m("getDefaultProps is only used on classic React.createClass definitions. Use a static property named `defaultProps` instead.")}}function pr(e){{for(var r=Object.keys(e.props),t=0;t<r.length;t++){var a=r[t];if(a!=="children"&&a!=="key"){F(e),m("Invalid prop `%s` supplied to `React.Fragment`. React.Fragment can only have `key` and `children` props.",a),F(null);break}}e.ref!==null&&(F(e),m("Invalid attribute `ref` supplied to `React.Fragment`."),F(null))}}var Te={};function ze(e,r,t,a,i,l){{var n=Ge(e);if(!n){var o="";(e===void 0||typeof e=="object"&&e!==null&&Object.keys(e).length===0)&&(o+=" You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.");var h=vr(i);h?o+=h:o+=Re();var s;e===null?s="null":X(e)?s="array":e!==void 0&&e.$$typeof===g?(s="<"+(R(e.type)||"Unknown")+" />",o=" Did you accidentally export a JSX literal instead of a component?"):s=typeof e,m("React.jsx: type is invalid -- expected a string (for built-in components) or a class/function (for composite components) but got: %s.%s",s,o)}var c=fr(e,r,t,i,l);if(c==null)return c;if(n){var b=r.children;if(b!==void 0)if(a)if(X(b)){for(var D=0;D<b.length;D++)we(b[D],e);Object.freeze&&Object.freeze(b)}else m("React.jsx: Static children should always be an array. You are likely explicitly calling React.jsxs or React.jsxDEV. Use the Babel transform instead.");else we(b,e)}if(A.call(r,"key")){var O=R(e),y=Object.keys(r).filter(function(_r){return _r!=="key"}),te=y.length>0?"{key: someKey, "+y.join(": ..., ")+": ...}":"{key: someKey}";if(!Te[O+te]){var xr=y.length>0?"{"+y.join(": ..., ")+": ...}":"{}";m(`A props object containing a "key" prop is being spread into JSX:
+Check the top-level render call using <`+t+">.")}return r}}function Ee(e,r){{if(!e._store||e._store.validated||e.key!=null)return;e._store.validated=!0;var t=hr(r);if(Re[t])return;Re[t]=!0;var a="";e&&e._owner&&e._owner!==ee.current&&(a=" It was passed a child from "+C(e._owner.type)+"."),k(e),m('Each child in a list should have a unique "key" prop.%s%s See https://reactjs.org/link/warning-keys for more information.',t,a),k(null)}}function Te(e,r){{if(typeof e!="object")return;if(Z(e))for(var t=0;t<e.length;t++){var a=e[t];te(a)&&Ee(a,r)}else if(te(e))e._store&&(e._store.validated=!0);else if(e){var n=We(e);if(typeof n=="function"&&n!==e.entries)for(var l=n.call(e),i;!(i=l.next()).done;)te(i.value)&&Ee(i.value,r)}}}function gr(e){{var r=e.type;if(r==null||typeof r=="string")return;var t;if(typeof r=="function")t=r.propTypes;else if(typeof r=="object"&&(r.$$typeof===d||r.$$typeof===P))t=r.propTypes;else return;if(t){var a=C(r);ar(t,e.props,"prop",a,e)}else if(r.PropTypes!==void 0&&!re){re=!0;var n=C(r);m("Component %s declared `PropTypes` instead of `propTypes`. Did you misspell the property assignment?",n||"Unknown")}typeof r.getDefaultProps=="function"&&!r.getDefaultProps.isReactClassApproved&&m("getDefaultProps is only used on classic React.createClass definitions. Use a static property named `defaultProps` instead.")}}function yr(e){{for(var r=Object.keys(e.props),t=0;t<r.length;t++){var a=r[t];if(a!=="children"&&a!=="key"){k(e),m("Invalid prop `%s` supplied to `React.Fragment`. React.Fragment can only have `key` and `children` props.",a),k(null);break}}e.ref!==null&&(k(e),m("Invalid attribute `ref` supplied to `React.Fragment`."),k(null))}}var ze={};function Fe(e,r,t,a,n,l){{var i=Ke(e);if(!i){var o="";(e===void 0||typeof e=="object"&&e!==null&&Object.keys(e).length===0)&&(o+=" You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.");var g=mr(n);g?o+=g:o+=Ce();var s;e===null?s="null":Z(e)?s="array":e!==void 0&&e.$$typeof===p?(s="<"+(C(e.type)||"Unknown")+" />",o=" Did you accidentally export a JSX literal instead of a component?"):s=typeof e,m("React.jsx: type is invalid -- expected a string (for built-in components) or a class/function (for composite components) but got: %s.%s",s,o)}var f=pr(e,r,t,n,l);if(f==null)return f;if(i){var w=r.children;if(w!==void 0)if(a)if(Z(w)){for(var D=0;D<w.length;D++)Te(w[D],e);Object.freeze&&Object.freeze(w)}else m("React.jsx: Static children should always be an array. You are likely explicitly calling React.jsxs or React.jsxDEV. Use the Babel transform instead.");else Te(w,e)}if(A.call(r,"key")){var F=C(e),y=Object.keys(r).filter(function(Sr){return Sr!=="key"}),ae=y.length>0?"{key: someKey, "+y.join(": ..., ")+": ...}":"{key: someKey}";if(!ze[F+ae]){var _r=y.length>0?"{"+y.join(": ..., ")+": ...}":"{}";m(`A props object containing a "key" prop is being spread into JSX:
   let props = %s;
   <%s {...props} />
 React keys must be passed directly to JSX without using spread:
   let props = %s;
-  <%s key={someKey} {...props} />`,te,O,xr,O),Te[O+te]=!0}}return e===f?pr(c):mr(c),c}}function gr(e,r,t){return ze(e,r,t,!0)}function hr(e,r,t){return ze(e,r,t,!1)}var yr=hr,br=gr;N.Fragment=f,N.jsx=yr,N.jsxs=br}()),N}process.env.NODE_ENV==="production"?ae.exports=Er():ae.exports=Rr();var x=ae.exports;function De({audioUrl:p,shaderType:g="default"}){const u=j.useRef(null),f=j.useRef(),[S,w]=j.useState(!0),_=j.useRef(null);j.useEffect(()=>{u.current&&(f.current=new Fe.AudioAnalyser(u.current,32))},[u]),oe.useFrame(({clock:v})=>{var d;if(!((d=_.current)!=null&&d.material))return;const C=_.current.material;if(C.uniforms.uTime.value=v.getElapsedTime(),f.current){const E=f.current.getAverageFrequency();C.uniforms.uFreq.value=E/256}});function P(){u.current&&(S?u.current.pause():u.current.play(),w(!S))}return x.jsxs("mesh",{onClick:P,castShadow:!0,ref:_,scale:[1,1,1],rotation:[Math.PI/2,0,0],children:[x.jsx(G.PositionalAudio,{url:p,distance:7,loop:!0,ref:u,autoplay:!0}),x.jsx("icosahedronGeometry",{args:[4,100]}),g==="halo"?x.jsx("haloBlobShaderMaterial",{transparent:!0}):x.jsx("blobShaderMaterial",{transparent:!0})]})}function Me({audioUrl:p,enableZoom:g=!0,enablePan:u=!1,shaderType:f="default"}){return x.jsxs(oe.Canvas,{camera:{position:[0,0,10],fov:50},style:{background:"transparent"},children:[x.jsx("ambientLight",{intensity:.5}),x.jsx("pointLight",{position:[10,10,10]}),x.jsx(De,{audioUrl:p,shaderType:f}),x.jsx(G.OrbitControls,{enableZoom:g,enablePan:u})]})}const Sr=`
+  <%s key={someKey} {...props} />`,ae,F,_r,F),ze[F+ae]=!0}}return e===u?yr(f):gr(f),f}}function br(e,r,t){return Fe(e,r,t,!0)}function xr(e,r,t){return Fe(e,r,t,!1)}var Pr=xr,wr=br;N.Fragment=u,N.jsx=Pr,N.jsxs=wr}()),N}process.env.NODE_ENV==="production"?oe.exports=Rr():oe.exports=Er();var b=oe.exports;const Tr=["default","halo"],zr=["default","halo","particle"],Me={default:["default"],halo:["halo","particle"]};function Ae({audioUrl:h,shaderType:p="default"}){const c=O.useRef(null),u=O.useRef(),[x,E]=O.useState(!0),_=O.useRef(null);O.useEffect(()=>{c.current&&(u.current=new De.AudioAnalyser(c.current,32))},[c]),ie.useFrame(({clock:d,camera:T})=>{var P;if(!((P=_.current)!=null&&P.material))return;const v=_.current.material;if(v.uniforms.uTime.value=d.getElapsedTime(),v.uniforms.ucameraPosition&&(v.uniforms.ucameraPosition.value=T.position.toArray()),u.current){const R=u.current.getAverageFrequency();v.uniforms.uFreq.value=R/256}});function S(){c.current&&(x?c.current.pause():c.current.play(),E(!x))}return b.jsxs("mesh",{onClick:S,castShadow:!0,ref:_,scale:[1,1,1],rotation:[Math.PI/2,0,0],children:[b.jsx(V.PositionalAudio,{url:h,distance:7,loop:!0,ref:c,autoplay:!0}),b.jsx("icosahedronGeometry",{args:[4,100]}),p==="halo"?b.jsx("haloBlobShaderMaterial",{transparent:!0}):p==="particle"?b.jsx("particleShaderMaterial",{transparent:!0}):b.jsx("blobShaderMaterial",{transparent:!0})]})}function qe({audioUrl:h,enableZoom:p=!0,enablePan:c=!1,shaderType:u="default"}){return b.jsxs(ie.Canvas,{camera:{position:[0,0,10],fov:50},style:{background:"transparent"},children:[b.jsx("ambientLight",{intensity:.5}),b.jsx("pointLight",{position:[10,10,10]}),Me[u].map(x=>b.jsx(Ae,{audioUrl:h,shaderType:x},`${u}-${x}`)),b.jsx(V.OrbitControls,{enableZoom:p,enablePan:c})]})}const Fr=`
   uniform float uTime;
   uniform float uFreq;
   varying float vDisplacement;
@@ -166,7 +166,7 @@ React keys must be passed directly to JSX without using spread:
 
     gl_Position = projectionMatrix * modelViewMatrix * vec4(newPosition, 1.0);
   }
-`,Cr=`
+`,Or=`
   uniform float uIntensity;
   uniform float uTime;
   varying vec2 vUv;
@@ -221,7 +221,7 @@ React keys must be passed directly to JSX without using spread:
 
     gl_FragColor = vec4(dropletColor, finalAlpha);
   }
-`,V={vertexShader:Sr,fragmentShader:Cr,uniforms:{uTime:{value:0},uFreq:{value:0},uIntensity:{value:1.5},transparent:!0}},wr=`
+`,L={vertexShader:Fr,fragmentShader:Or,uniforms:{uTime:{value:0},uFreq:{value:0},uIntensity:{value:1.5},transparent:!0}},jr=`
   uniform float uTime;
   uniform float uFreq;
   varying vec2 vUv;
@@ -233,12 +233,14 @@ React keys must be passed directly to JSX without using spread:
     vPosition = position;
     vNormal = normalize(normalMatrix * normal);
     
-    gl_Position = projectionMatrix * modelViewMatrix * vec4(position*uTime, 1.0);
+    // Simple position calculation - no time multiplication that causes expansion
+    gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
   }
-`,Tr=`
+`,kr=`
   uniform float uTime;
   uniform float uFreq;
   uniform float uIntensity;
+  uniform vec3 ucameraPosition;
   varying vec2 vUv;
   varying vec3 vPosition;
   varying vec3 vNormal;
@@ -262,34 +264,45 @@ React keys must be passed directly to JSX without using spread:
     return mix(mix(a, b, f.x), mix(c, d, f.x), f.y);
   }
 
-  // Function to create moving particles that respond to audio
-  float particles(vec2 uv, float time, float freq) {
+  // Function to create moving particles that respond to audio and fresnel
+  float particles(vec2 uv, float time, float freq, float fresnel) {
     float particleField = 0.0;
     
-    // Create multiple layers of particles with different speeds and sizes
+    // Create multiple layers of particles with different sizes
     for (int i = 0; i < 5; i++) {
       float layer = float(i);
       float speed = 0.3 + layer * 0.5;
-      float scale = 120.0 + layer * 30.0; // Increased scale for more particles
+      float scale = 200.0 + layer * 50.0; // Increased scale for more particles
       
-      // Make particles move based on frequency - much more subtle movement
-      vec2 audioOffset = vec2(
-        sin(time * speed + layer * 1.5) * 0.05 * freq,
-        cos(time * speed * 0.7 + layer * 2.1) * 0.05 * freq
+      // Basic time-based flow - always active, larger movement
+      vec2 timeFlow = vec2(
+        sin(time * 0.2 + layer * 0.7) * 0.2,
+        cos(time * 0.15 + layer * 1.2) * 0.2
       );
       
-      vec2 movingUv = uv + audioOffset;
+      // Audio-responsive movement
+      vec2 audioOffset = vec2(
+        sin(time * speed + layer * 1.5) * 0.1 * freq,
+        cos(time * speed * 0.7 + layer * 2.1) * 0.1 * freq
+      );
       
-      float noiseVal = noise(movingUv * scale + time * speed);
-      float threshold = 0.95 + layer * 0.003; // Lower threshold for more particles
+      // Apply audio offset to UV coordinates for particle movement
+      vec2 animatedUV = uv + audioOffset + timeFlow;
+      float noiseVal = noise(animatedUV * scale);
+      
+      // Adjust threshold based on fresnel - lower threshold in fresnel regions
+      float baseThreshold = 0.99 + layer * 0.008; // Lowered base threshold for more particles
+      float fresnelInfluence = fresnel * 1.0; // Increased fresnel influence
+      float threshold = baseThreshold - fresnelInfluence;
+      
       float particle = step(threshold, noiseVal);
       
-      // Make particles pulse with frequency - much more subtle
-      float pulse = 1.0 + 0.2 * sin(time * 0.5 + layer) * freq * 0.5;
-      particle *= pulse;
+      // Make particles respond to frequency (no time-based pulsing)
+      float freqResponse = 1.0 + 0.3 * freq;
+      particle *= freqResponse;
       
-      // Same small size for all layers - tiny dots
-      float particleSize = 0.1;
+      // Particle size - always tiny
+      float particleSize = 0.2;
       particleField += particle * particleSize;
     }
     
@@ -297,41 +310,147 @@ React keys must be passed directly to JSX without using spread:
   }
 
   void main() {
-    // Use a simpler rim calculation based on UV coordinates and normal
-    float rimFactor = 1.0 - dot(vNormal, vec3(0.0, 0.0, 1.0));
+    // Calculate view direction from camera position for proper rim effect
+    vec3 viewDirection = normalize(ucameraPosition - vPosition);
     
-    // Create smooth rim gradient
-    float rimWidth = 0.4;
-    float rimIntensity = smoothstep(0.0, rimWidth, rimFactor);
+    // Calculate fresnel effect using dot product
+    float fresnel = dot(vNormal, viewDirection);
+    fresnel = 1.0 - fresnel; // Invert to get higher values at the rim
+
+    float control = 3.5; // Control the sharpness of the rim (lower less sharp)
+    fresnel = pow(fresnel, control); // Apply power for control over falloff and sharpness
     
-    // Create moving particles that respond to audio
-    float particleDensity = particles(vUv, uTime, uFreq);
+    // Create particles that respond to audio
+    float particleDensity = particles(vUv, uTime, uFreq, fresnel);
     
-    // Dark navy colors
-    vec3 particleColor = vec3(0.01, 0.03, 0.25); // Dark navy for particles
-    vec3 rimColor = vec3(0.02, 0.05, 0.3); // Slightly lighter navy for rim
+    // Basic lighting for depth
+    vec3 lightDirection = normalize(vec3(1.0, 1.0, 1.0));
+    float diffuse = max(0.0, dot(vNormal, lightDirection));
     
-    // Create the final color - rim + particles
-    vec3 finalColor;
-    float alpha;
+    // Colors
+    vec3 baseColor = vec3(0.01, 0.02, 0.1); // Very dark navy
+    vec3 rimColor = vec3(0.2, 0.4, 1.0); // Bright blue for halo
+    vec3 particleColor = vec3(0.2, 0.4, 1.0); // Bright blue-white for particles
     
-    // Base color is transparent
-    finalColor = vec3(0.0);
-    alpha = 0.0;
+    // Start with base lighting
+    vec3 finalColor = baseColor * (0.2 + 0.3 * diffuse);
     
-    // Add rim effect
-    if (rimIntensity > 0.0) {
-      finalColor = mix(finalColor, rimColor, rimIntensity * 0.8);
-      alpha = max(alpha, rimIntensity * 0.6);
-    }
+    // Add the fresnel rim effect
+    finalColor = mix(finalColor, rimColor, fresnel * 0.8);
     
-    // Add particles on top
+    // Add particles on top with higher opacity
     if (particleDensity > 0.0) {
-      finalColor = mix(finalColor, particleColor, particleDensity * 0.7);
-      alpha = max(alpha, particleDensity * 0.5);
+      finalColor = mix(finalColor, particleColor, particleDensity);
     }
+    
+    // Alpha - combine fresnel and particles with higher particle contribution
+    float alpha = fresnel * 0.9;
+    alpha = max(alpha, particleDensity * 0.8); // Increased particle alpha contribution
     
     gl_FragColor = vec4(finalColor, alpha);
   }
-`,L={vertexShader:wr,fragmentShader:Tr,uniforms:{uTime:{value:0},uFreq:{value:0},uIntensity:{value:6},transparent:!0}},Ae=G.shaderMaterial(V.uniforms,V.vertexShader,V.fragmentShader),Ie=G.shaderMaterial(L.uniforms,L.vertexShader,L.fragmentShader);oe.extend({BlobShaderMaterial:Ae,HaloBlobShaderMaterial:Ie,Mesh:Fe.Mesh,IcosahedronGeometry:ke.IcosahedronGeometry});function qe({audioUrl:p="test.mp3",width:g,height:u,className:f,enableZoom:S=!0,enablePan:w=!1,shaderType:_="default"}){const P={width:g||"100%",height:u||"400px"};return x.jsx("div",{style:P,className:f,children:x.jsx(Me,{audioUrl:p,enableZoom:S,enablePan:w,shaderType:_})})}exports.BlobComponent=qe;exports.BlobComponentDefault=qe;exports.BlobMesh=De;exports.BlobShaderMaterial=Ae;exports.HaloBlobShaderMaterial=Ie;exports.ShaderScene=Me;exports.blobShaderConfig=V;exports.haloBlobShaderConfig=L;
+`,G={vertexShader:jr,fragmentShader:kr,uniforms:{uTime:{value:0},uFreq:{value:0},uIntensity:{value:6},ucameraPosition:{value:[0,0,10]},transparent:!0}},Dr=`
+  uniform float uTime;
+  uniform float uFreq;
+  varying vec2 vUv;
+  varying vec3 vPosition;
+  varying vec3 vNormal;
+
+  void main() {
+    vUv = uv;
+    vPosition = position;
+    vNormal = normalize(normalMatrix * normal);
+    gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+  }
+`,Mr=`
+  uniform float uTime;
+  uniform float uFreq;
+  uniform vec3 ucameraPosition;
+  varying vec2 vUv;
+  varying vec3 vPosition;
+  varying vec3 vNormal;
+
+  // Hash function for pseudo-random number generation
+  float hash(vec2 p) {
+    return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453);
+  }
+
+  // Noise function for particle distribution
+  float noise(vec2 p) {
+    vec2 i = floor(p);
+    vec2 f = fract(p);
+    f = f * f * (3.0 - 2.0 * f);
+    
+    float a = hash(i);
+    float b = hash(i + vec2(1.0, 0.0));
+    float c = hash(i + vec2(0.0, 1.0));
+    float d = hash(i + vec2(1.0, 1.0));
+    
+    return mix(mix(a, b, f.x), mix(c, d, f.x), f.y);
+  }
+
+  // Function to create moving particles that respond to audio and fresnel
+  float particles(vec2 uv, float time, float freq, float fresnel) {
+    float particleField = 0.0;
+    
+    // Create multiple layers of particles with different sizes
+    for (int i = 0; i < 5; i++) {
+      float layer = float(i);
+      float speed = 0.3 + layer * 0.5;
+      float scale = 200.0 + layer * 50.0; // Increased scale for more particles
+      
+      // Basic time-based flow - always active, larger movement
+      vec2 timeFlow = vec2(
+        sin(time * 0.2 + layer * 0.7) * 0.2,
+        cos(time * 0.15 + layer * 1.2) * 0.2
+      );
+      
+      // Audio-responsive movement
+      vec2 audioOffset = vec2(
+        sin(time * speed + layer * 1.5) * 0.05 * freq,
+        cos(time * speed * 0.7 + layer * 2.1) * 0.05 * freq
+      );
+      
+      // Apply audio offset to UV coordinates for particle movement
+      vec2 animatedUV = uv + audioOffset + timeFlow;
+      float noiseVal = noise(animatedUV * scale);
+      
+      // Adjust threshold based on fresnel - lower threshold in fresnel regions
+      float baseThreshold = 0.99 + layer * 0.008; // Lowered base threshold for more particles
+      float fresnelInfluence = fresnel * 0.95; // Increased fresnel influence
+      float threshold = baseThreshold - fresnelInfluence;
+      
+      float particle = step(threshold, noiseVal);
+      
+      // Make particles respond to frequency (no time-based pulsing)
+      float freqResponse = 1.0 + 0.3 * freq;
+      particle *= freqResponse;
+      
+      // Particle size - always tiny
+      float particleSize = 0.2;
+      particleField += particle * particleSize;
+    }
+    
+    return particleField;
+  }
+
+  void main() {
+    // Calculate view direction from camera position for proper rim effect
+    vec3 viewDirection = normalize(ucameraPosition - vPosition);
+    
+    // Calculate fresnel effect using dot product for particle distribution
+    float fresnel = dot(vNormal, viewDirection);
+    fresnel = 1.0 - fresnel; // Invert to get higher values at the rim
+    fresnel = pow(fresnel, 3.5); // Apply power for control over falloff and sharpness
+    
+    // Create particles that respond to audio
+    float particleDensity = particles(vUv, uTime, uFreq, fresnel);
+    
+    // Particle color and alpha - separate from rim
+    vec3 particleColor = vec3(0.1, 0.4, 0.5); // Darker aqua with gray/navy tones
+    float alpha = particleDensity * 1.0; // Separate alpha for particles
+    
+    gl_FragColor = vec4(particleColor, alpha);
+  }
+`,J={vertexShader:Dr,fragmentShader:Mr,uniforms:{uTime:{value:0},uFreq:{value:0},uIntensity:{value:6},ucameraPosition:{value:[0,0,10]},transparent:!0}},Ie=V.shaderMaterial(L.uniforms,L.vertexShader,L.fragmentShader),Ne=V.shaderMaterial(G.uniforms,G.vertexShader,G.fragmentShader),Ve=V.shaderMaterial(J.uniforms,J.vertexShader,J.fragmentShader);ie.extend({BlobShaderMaterial:Ie,HaloBlobShaderMaterial:Ne,ParticleShaderMaterial:Ve,Mesh:De.Mesh,IcosahedronGeometry:ke.IcosahedronGeometry});function Ue({audioUrl:h="test.mp3",width:p,height:c,className:u,enableZoom:x=!0,enablePan:E=!1,shaderType:_="default"}){const S={width:p||"100%",height:c||"400px"};return b.jsx("div",{style:S,className:u,children:b.jsx(qe,{audioUrl:h,enableZoom:x,enablePan:E,shaderType:_})})}exports.BlobComponent=Ue;exports.BlobComponentDefault=Ue;exports.BlobMesh=Ae;exports.BlobShaderMaterial=Ie;exports.HaloBlobShaderMaterial=Ne;exports.ParticleShaderMaterial=Ve;exports.ShaderScene=qe;exports.blobRenderPasses=zr;exports.blobShaderConfig=L;exports.blobVariantPasses=Me;exports.haloBlobShaderConfig=G;exports.particleShaderConfig=J;exports.publicBlobVariants=Tr;
 //# sourceMappingURL=index.cjs.map
