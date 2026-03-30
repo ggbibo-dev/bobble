@@ -1183,7 +1183,7 @@ wr({
   IcosahedronGeometry: _r
 });
 function Wr({
-  audioUrl: y = "test.mp3",
+  audioUrl: y,
   width: x,
   height: p,
   className: m,

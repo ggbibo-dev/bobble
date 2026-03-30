@@ -39,7 +39,7 @@ function App() {
 
 - `width` (number, optional): Width of the blob container in pixels (default: 100% if not specified)
 - `height` (number, optional): Height of the blob container in pixels (default: 400px)
-- `audioUrl` (string, optional): URL to audio file for visualization (default: "test.mp3")
+- `audioUrl` (string, optional): URL to audio file for visualization. Provide this if you want click-to-play audio reactivity.
 - `className` (string, optional): Additional CSS class name for styling
 - `enableZoom` (boolean, optional): Enable zoom controls for the 3D scene (default: true)
 - `enablePan` (boolean, optional): Enable pan controls for the 3D scene (default: false)

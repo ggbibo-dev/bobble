@@ -73,18 +73,18 @@ describe('BlobComponent', () => {
   })
 
   it('renders with halo shader', () => {
-    render(<BlobComponent audioUrl="test.mp3" shaderType="halo" />)
+    render(<BlobComponent audioUrl="custom-audio.mp3" shaderType="halo" />)
     expect(screen.getByTestId('canvas')).toBeInTheDocument()
   })
 
   it('renders with custom dimensions', () => {
-    render(<BlobComponent audioUrl="test.mp3" width={500} height={300} />)
+    render(<BlobComponent audioUrl="custom-audio.mp3" width={500} height={300} />)
     const container = screen.getByTestId('canvas').parentElement
     expect(container).toHaveStyle({ width: '500px', height: '300px' })
   })
 
   it('renders with custom className', () => {
-    render(<BlobComponent audioUrl="test.mp3" className="custom-class" />)
+    render(<BlobComponent audioUrl="custom-audio.mp3" className="custom-class" />)
     const container = screen.getByTestId('canvas').parentElement
     expect(container).toHaveClass('custom-class')
   })

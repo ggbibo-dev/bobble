@@ -25,7 +25,7 @@ export interface BlobComponentProps {
 }
 
 function BlobComponent({ 
-  audioUrl = "test.mp3",
+  audioUrl,
   width,
   height,
   className,

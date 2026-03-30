@@ -4,7 +4,7 @@ import { OrbitControls } from '@react-three/drei'
 import { BlobMesh } from '../meshes'
 
 interface ShaderSceneProps {
-  audioUrl: string
+  audioUrl?: string
   enableZoom?: boolean
   enablePan?: boolean
   shaderType?: 'default' | 'halo' | 'particle'
